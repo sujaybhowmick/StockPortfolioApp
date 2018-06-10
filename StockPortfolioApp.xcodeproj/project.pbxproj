@@ -7,14 +7,33 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		907EAAC920CD1CE900F9A267 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907EAAC820CD1CE900F9A267 /* Constants.swift */; };
 		9081271920C58BAA00AC3ABB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9081271820C58BAA00AC3ABB /* AppDelegate.swift */; };
 		9081271B20C58BAA00AC3ABB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9081271A20C58BAA00AC3ABB /* ViewController.swift */; };
 		9081271E20C58BAA00AC3ABB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9081271C20C58BAA00AC3ABB /* Main.storyboard */; };
 		9081272020C58BAB00AC3ABB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9081271F20C58BAB00AC3ABB /* Assets.xcassets */; };
 		9081272320C58BAB00AC3ABB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9081272120C58BAB00AC3ABB /* LaunchScreen.storyboard */; };
+		90CA7B3620CC3DEA003A9C92 /* StockPortfolioDB.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 90CA7B3420CC3DEA003A9C92 /* StockPortfolioDB.xcdatamodeld */; };
+		90CA7B3820CD069F003A9C92 /* APIConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90CA7B3720CD069F003A9C92 /* APIConfiguration.swift */; };
+		90CA7B3C20CD0C0B003A9C92 /* StockPriceEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90CA7B3B20CD0C0B003A9C92 /* StockPriceEndPoint.swift */; };
+		90CA7B4420CD122C003A9C92 /* StockPortfolioAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90CA7B4320CD122C003A9C92 /* StockPortfolioAppTests.swift */; };
+		F961AADF880B1F791A562D52 /* Pods_StockPortfolioApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37A3E2A577E5DB2F6077115C /* Pods_StockPortfolioApp.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		90CA7B4620CD122C003A9C92 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9081270D20C58BAA00AC3ABB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9081271420C58BAA00AC3ABB;
+			remoteInfo = StockPortfolioApp;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		37A3E2A577E5DB2F6077115C /* Pods_StockPortfolioApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StockPortfolioApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7986B371B8D6EF0C27657879 /* Pods-StockPortfolioApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StockPortfolioApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-StockPortfolioApp/Pods-StockPortfolioApp.release.xcconfig"; sourceTree = "<group>"; };
+		907EAAC820CD1CE900F9A267 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		9081271520C58BAA00AC3ABB /* StockPortfolioApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StockPortfolioApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9081271820C58BAA00AC3ABB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9081271A20C58BAA00AC3ABB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,10 +41,26 @@
 		9081271F20C58BAB00AC3ABB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9081272220C58BAB00AC3ABB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9081272420C58BAB00AC3ABB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		90CA7B3520CC3DEA003A9C92 /* StockPortfolioDB.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = StockPortfolioDB.xcdatamodel; sourceTree = "<group>"; };
+		90CA7B3720CD069F003A9C92 /* APIConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConfiguration.swift; sourceTree = "<group>"; };
+		90CA7B3920CD0833003A9C92 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		90CA7B3B20CD0C0B003A9C92 /* StockPriceEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockPriceEndPoint.swift; sourceTree = "<group>"; };
+		90CA7B4120CD122C003A9C92 /* StockPortfolioAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StockPortfolioAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		90CA7B4320CD122C003A9C92 /* StockPortfolioAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockPortfolioAppTests.swift; sourceTree = "<group>"; };
+		90CA7B4520CD122C003A9C92 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F1CDBDC867A257926BB37747 /* Pods-StockPortfolioApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StockPortfolioApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-StockPortfolioApp/Pods-StockPortfolioApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		9081271220C58BAA00AC3ABB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F961AADF880B1F791A562D52 /* Pods_StockPortfolioApp.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		90CA7B3E20CD122C003A9C92 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -35,11 +70,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4823A2043DC92F8464EAC497 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F1CDBDC867A257926BB37747 /* Pods-StockPortfolioApp.debug.xcconfig */,
+				7986B371B8D6EF0C27657879 /* Pods-StockPortfolioApp.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		9081270C20C58BAA00AC3ABB = {
 			isa = PBXGroup;
 			children = (
 				9081271720C58BAA00AC3ABB /* StockPortfolioApp */,
+				90CA7B4220CD122C003A9C92 /* StockPortfolioAppTests */,
 				9081271620C58BAA00AC3ABB /* Products */,
+				4823A2043DC92F8464EAC497 /* Pods */,
+				B024CBCA557B4DBDC5F9DA4C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -47,6 +94,7 @@
 			isa = PBXGroup;
 			children = (
 				9081271520C58BAA00AC3ABB /* StockPortfolioApp.app */,
+				90CA7B4120CD122C003A9C92 /* StockPortfolioAppTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -54,14 +102,68 @@
 		9081271720C58BAA00AC3ABB /* StockPortfolioApp */ = {
 			isa = PBXGroup;
 			children = (
+				90F099EE20C7A01A007C0BB3 /* Persistence */,
+				90F099ED20C7A011007C0BB3 /* Networking */,
+				90F099EC20C7A004007C0BB3 /* Models */,
+				90F099EA20C79FF0007C0BB3 /* Views */,
 				9081271820C58BAA00AC3ABB /* AppDelegate.swift */,
-				9081271A20C58BAA00AC3ABB /* ViewController.swift */,
 				9081271C20C58BAA00AC3ABB /* Main.storyboard */,
 				9081271F20C58BAB00AC3ABB /* Assets.xcassets */,
 				9081272120C58BAB00AC3ABB /* LaunchScreen.storyboard */,
 				9081272420C58BAB00AC3ABB /* Info.plist */,
+				90CA7B3420CC3DEA003A9C92 /* StockPortfolioDB.xcdatamodeld */,
+				907EAAC820CD1CE900F9A267 /* Constants.swift */,
 			);
 			path = StockPortfolioApp;
+			sourceTree = "<group>";
+		};
+		90CA7B4220CD122C003A9C92 /* StockPortfolioAppTests */ = {
+			isa = PBXGroup;
+			children = (
+				90CA7B4320CD122C003A9C92 /* StockPortfolioAppTests.swift */,
+				90CA7B4520CD122C003A9C92 /* Info.plist */,
+			);
+			path = StockPortfolioAppTests;
+			sourceTree = "<group>";
+		};
+		90F099EA20C79FF0007C0BB3 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9081271A20C58BAA00AC3ABB /* ViewController.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		90F099EC20C7A004007C0BB3 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		90F099ED20C7A011007C0BB3 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				90CA7B3720CD069F003A9C92 /* APIConfiguration.swift */,
+				90CA7B3B20CD0C0B003A9C92 /* StockPriceEndPoint.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		90F099EE20C7A01A007C0BB3 /* Persistence */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Persistence;
+			sourceTree = "<group>";
+		};
+		B024CBCA557B4DBDC5F9DA4C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				90CA7B3920CD0833003A9C92 /* Alamofire.framework */,
+				37A3E2A577E5DB2F6077115C /* Pods_StockPortfolioApp.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +173,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9081272720C58BAB00AC3ABB /* Build configuration list for PBXNativeTarget "StockPortfolioApp" */;
 			buildPhases = (
+				EEBEBA1B10CF49C3390B5F1E /* [CP] Check Pods Manifest.lock */,
 				9081271120C58BAA00AC3ABB /* Sources */,
 				9081271220C58BAA00AC3ABB /* Frameworks */,
 				9081271320C58BAA00AC3ABB /* Resources */,
+				D67C53FC193C9C20E6624774 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -83,6 +187,24 @@
 			productName = StockPortfolioApp;
 			productReference = 9081271520C58BAA00AC3ABB /* StockPortfolioApp.app */;
 			productType = "com.apple.product-type.application";
+		};
+		90CA7B4020CD122C003A9C92 /* StockPortfolioAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 90CA7B4820CD122C003A9C92 /* Build configuration list for PBXNativeTarget "StockPortfolioAppTests" */;
+			buildPhases = (
+				90CA7B3D20CD122C003A9C92 /* Sources */,
+				90CA7B3E20CD122C003A9C92 /* Frameworks */,
+				90CA7B3F20CD122C003A9C92 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				90CA7B4720CD122C003A9C92 /* PBXTargetDependency */,
+			);
+			name = StockPortfolioAppTests;
+			productName = StockPortfolioAppTests;
+			productReference = 90CA7B4120CD122C003A9C92 /* StockPortfolioAppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -96,6 +218,10 @@
 				TargetAttributes = {
 					9081271420C58BAA00AC3ABB = {
 						CreatedOnToolsVersion = 9.4;
+					};
+					90CA7B4020CD122C003A9C92 = {
+						CreatedOnToolsVersion = 9.4;
+						TestTargetID = 9081271420C58BAA00AC3ABB;
 					};
 				};
 			};
@@ -113,6 +239,7 @@
 			projectRoot = "";
 			targets = (
 				9081271420C58BAA00AC3ABB /* StockPortfolioApp */,
+				90CA7B4020CD122C003A9C92 /* StockPortfolioAppTests */,
 			);
 		};
 /* End PBXProject section */
@@ -128,19 +255,85 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		90CA7B3F20CD122C003A9C92 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		D67C53FC193C9C20E6624774 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-StockPortfolioApp/Pods-StockPortfolioApp-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-StockPortfolioApp/Pods-StockPortfolioApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EEBEBA1B10CF49C3390B5F1E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-StockPortfolioApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		9081271120C58BAA00AC3ABB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				90CA7B3C20CD0C0B003A9C92 /* StockPriceEndPoint.swift in Sources */,
+				90CA7B3620CC3DEA003A9C92 /* StockPortfolioDB.xcdatamodeld in Sources */,
 				9081271B20C58BAA00AC3ABB /* ViewController.swift in Sources */,
 				9081271920C58BAA00AC3ABB /* AppDelegate.swift in Sources */,
+				90CA7B3820CD069F003A9C92 /* APIConfiguration.swift in Sources */,
+				907EAAC920CD1CE900F9A267 /* Constants.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		90CA7B3D20CD122C003A9C92 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				90CA7B4420CD122C003A9C92 /* StockPortfolioAppTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		90CA7B4720CD122C003A9C92 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9081271420C58BAA00AC3ABB /* StockPortfolioApp */;
+			targetProxy = 90CA7B4620CD122C003A9C92 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		9081271C20C58BAA00AC3ABB /* Main.storyboard */ = {
@@ -278,6 +471,7 @@
 		};
 		9081272820C58BAB00AC3ABB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F1CDBDC867A257926BB37747 /* Pods-StockPortfolioApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -296,6 +490,7 @@
 		};
 		9081272920C58BAB00AC3ABB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7986B371B8D6EF0C27657879 /* Pods-StockPortfolioApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -309,6 +504,46 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		90CA7B4920CD122C003A9C92 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4XL3CX888E;
+				INFOPLIST_FILE = StockPortfolioAppTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.sujaybhowmick.StockPortfolioAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/StockPortfolioApp.app/StockPortfolioApp";
+			};
+			name = Debug;
+		};
+		90CA7B4A20CD122C003A9C92 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4XL3CX888E;
+				INFOPLIST_FILE = StockPortfolioAppTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.sujaybhowmick.StockPortfolioAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/StockPortfolioApp.app/StockPortfolioApp";
 			};
 			name = Release;
 		};
@@ -333,7 +568,29 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		90CA7B4820CD122C003A9C92 /* Build configuration list for PBXNativeTarget "StockPortfolioAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				90CA7B4920CD122C003A9C92 /* Debug */,
+				90CA7B4A20CD122C003A9C92 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		90CA7B3420CC3DEA003A9C92 /* StockPortfolioDB.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				90CA7B3520CC3DEA003A9C92 /* StockPortfolioDB.xcdatamodel */,
+			);
+			currentVersion = 90CA7B3520CC3DEA003A9C92 /* StockPortfolioDB.xcdatamodel */;
+			path = StockPortfolioDB.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 9081270D20C58BAA00AC3ABB /* Project object */;
 }
