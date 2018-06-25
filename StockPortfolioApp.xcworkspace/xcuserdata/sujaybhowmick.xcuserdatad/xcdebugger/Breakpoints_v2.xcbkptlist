@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   type = "0"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "StockPortfolioAppTests/APIClientTests.swift"
+            timestampString = "551623698.766135"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "73"
+            endingLineNumber = "73"
+            landmarkName = "testValidateEarningsRequest()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Bool, Swift.Optional&lt;StockPortfolioApp.Earning&gt;, Swift.Optional&lt;__ObjC.NSError&gt;) -&gt; () in StockPortfolioAppTests.APIClientTests.testValidateEarningsRequest() -&gt; ()"
+                  moduleName = "StockPortfolioAppTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sujaybhowmick/development/courses/ios/udacity/final-project/StockPortfolioApp/StockPortfolioAppTests/APIClientTests.swift"
+                  timestampString = "551623699.400412"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "73"
+                  endingLineNumber = "73"
+                  offsetFromSymbolStart = "659">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "implicit closure #3 : @autoclosure () throws -&gt; Swift.Bool in closure #1 (Swift.Bool, Swift.Optional&lt;StockPortfolioApp.Earning&gt;, Swift.Optional&lt;__ObjC.NSError&gt;) -&gt; () in StockPortfolioAppTests.APIClientTests.testValidateEarningsRequest() -&gt; ()"
+                  moduleName = "StockPortfolioAppTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sujaybhowmick/development/courses/ios/udacity/final-project/StockPortfolioApp/StockPortfolioAppTests/APIClientTests.swift"
+                  timestampString = "551623699.403157"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "73"
+                  endingLineNumber = "73"
+                  offsetFromSymbolStart = "24">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

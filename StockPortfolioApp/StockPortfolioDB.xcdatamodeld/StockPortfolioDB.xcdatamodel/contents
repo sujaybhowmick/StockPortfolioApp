@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14135" systemVersion="17E202" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="NSEStockList" representedClassName="NSEStockList" syncable="YES" codeGenerationType="class">
+        <attribute name="nse_stock_code" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="nse_stock_name" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Portfolio" representedClassName="Portfolio" syncable="YES" codeGenerationType="class">
+        <attribute name="close" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="high" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="last" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="low" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="nse_stock_code" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="open" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="trade_volume" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="turnover" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="NSEStockList" positionX="-63" positionY="-18" width="128" height="75"/>
+        <element name="Portfolio" positionX="-54" positionY="9" width="128" height="180"/>
+    </elements>
+</model>

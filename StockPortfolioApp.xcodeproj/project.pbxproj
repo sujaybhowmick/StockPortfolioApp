@@ -7,12 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		906D3A2720DF6FD80076C1D1 /* Earning.swift in Sources */ = {isa = PBXBuildFile; fileRef = 906D3A2620DF6FD80076C1D1 /* Earning.swift */; };
+		906D3A2920DF7ADE0076C1D1 /* EarningTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 906D3A2820DF7ADE0076C1D1 /* EarningTests.swift */; };
+		906D3A2B20DF9E200076C1D1 /* Dividend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 906D3A2A20DF9E200076C1D1 /* Dividend.swift */; };
+		906D3A2D20DF9F280076C1D1 /* DividendTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 906D3A2C20DF9F280076C1D1 /* DividendTests.swift */; };
+		906D3A3120DFB92D0076C1D1 /* DelayedQuoteEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 906D3A3020DFB92D0076C1D1 /* DelayedQuoteEndPoint.swift */; };
+		906D3A3320DFC6A40076C1D1 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 906D3A3220DFC6A40076C1D1 /* APIClient.swift */; };
+		906D3A3520DFD7080076C1D1 /* APIClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 906D3A3420DFD7080076C1D1 /* APIClientTests.swift */; };
 		907EAAC920CD1CE900F9A267 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907EAAC820CD1CE900F9A267 /* Constants.swift */; };
+		907EAACD20CF390300F9A267 /* DelayedQuote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907EAACC20CF390300F9A267 /* DelayedQuote.swift */; };
 		9081271920C58BAA00AC3ABB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9081271820C58BAA00AC3ABB /* AppDelegate.swift */; };
 		9081271B20C58BAA00AC3ABB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9081271A20C58BAA00AC3ABB /* ViewController.swift */; };
 		9081271E20C58BAA00AC3ABB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9081271C20C58BAA00AC3ABB /* Main.storyboard */; };
 		9081272020C58BAB00AC3ABB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9081271F20C58BAB00AC3ABB /* Assets.xcassets */; };
 		9081272320C58BAB00AC3ABB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9081272120C58BAB00AC3ABB /* LaunchScreen.storyboard */; };
+		90B8C5A720DDEC7C00DB3E81 /* DelayedQuoteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B8C5A620DDEC7C00DB3E81 /* DelayedQuoteTests.swift */; };
+		90B8C5A920DE15A800DB3E81 /* Chart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B8C5A820DE15A800DB3E81 /* Chart.swift */; };
+		90B8C5AB20DE2C6900DB3E81 /* ChartTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B8C5AA20DE2C6900DB3E81 /* ChartTests.swift */; };
+		90BF749020E0C8B700C1DEBB /* ChartEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90BF748F20E0C8B700C1DEBB /* ChartEndPoint.swift */; };
+		90BF749420E0FC5A00C1DEBB /* DividendEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90BF749320E0FC5A00C1DEBB /* DividendEndPoint.swift */; };
+		90BF749620E10A0300C1DEBB /* EarningEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90BF749520E10A0300C1DEBB /* EarningEndPoint.swift */; };
 		90CA7B3620CC3DEA003A9C92 /* StockPortfolioDB.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 90CA7B3420CC3DEA003A9C92 /* StockPortfolioDB.xcdatamodeld */; };
 		90CA7B3820CD069F003A9C92 /* APIConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90CA7B3720CD069F003A9C92 /* APIConfiguration.swift */; };
 		90CA7B3C20CD0C0B003A9C92 /* StockPriceEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90CA7B3B20CD0C0B003A9C92 /* StockPriceEndPoint.swift */; };
@@ -33,7 +47,15 @@
 /* Begin PBXFileReference section */
 		37A3E2A577E5DB2F6077115C /* Pods_StockPortfolioApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StockPortfolioApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7986B371B8D6EF0C27657879 /* Pods-StockPortfolioApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StockPortfolioApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-StockPortfolioApp/Pods-StockPortfolioApp.release.xcconfig"; sourceTree = "<group>"; };
+		906D3A2620DF6FD80076C1D1 /* Earning.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Earning.swift; sourceTree = "<group>"; };
+		906D3A2820DF7ADE0076C1D1 /* EarningTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EarningTests.swift; sourceTree = "<group>"; };
+		906D3A2A20DF9E200076C1D1 /* Dividend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dividend.swift; sourceTree = "<group>"; };
+		906D3A2C20DF9F280076C1D1 /* DividendTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DividendTests.swift; sourceTree = "<group>"; };
+		906D3A3020DFB92D0076C1D1 /* DelayedQuoteEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DelayedQuoteEndPoint.swift; sourceTree = "<group>"; };
+		906D3A3220DFC6A40076C1D1 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		906D3A3420DFD7080076C1D1 /* APIClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClientTests.swift; sourceTree = "<group>"; };
 		907EAAC820CD1CE900F9A267 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		907EAACC20CF390300F9A267 /* DelayedQuote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DelayedQuote.swift; sourceTree = "<group>"; };
 		9081271520C58BAA00AC3ABB /* StockPortfolioApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StockPortfolioApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9081271820C58BAA00AC3ABB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9081271A20C58BAA00AC3ABB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -41,6 +63,12 @@
 		9081271F20C58BAB00AC3ABB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9081272220C58BAB00AC3ABB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9081272420C58BAB00AC3ABB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		90B8C5A620DDEC7C00DB3E81 /* DelayedQuoteTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DelayedQuoteTests.swift; sourceTree = "<group>"; };
+		90B8C5A820DE15A800DB3E81 /* Chart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chart.swift; sourceTree = "<group>"; };
+		90B8C5AA20DE2C6900DB3E81 /* ChartTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartTests.swift; sourceTree = "<group>"; };
+		90BF748F20E0C8B700C1DEBB /* ChartEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartEndPoint.swift; sourceTree = "<group>"; };
+		90BF749320E0FC5A00C1DEBB /* DividendEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DividendEndPoint.swift; sourceTree = "<group>"; };
+		90BF749520E10A0300C1DEBB /* EarningEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EarningEndPoint.swift; sourceTree = "<group>"; };
 		90CA7B3520CC3DEA003A9C92 /* StockPortfolioDB.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = StockPortfolioDB.xcdatamodel; sourceTree = "<group>"; };
 		90CA7B3720CD069F003A9C92 /* APIConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConfiguration.swift; sourceTree = "<group>"; };
 		90CA7B3920CD0833003A9C92 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -122,6 +150,11 @@
 			children = (
 				90CA7B4320CD122C003A9C92 /* StockPortfolioAppTests.swift */,
 				90CA7B4520CD122C003A9C92 /* Info.plist */,
+				90B8C5A620DDEC7C00DB3E81 /* DelayedQuoteTests.swift */,
+				90B8C5AA20DE2C6900DB3E81 /* ChartTests.swift */,
+				906D3A2820DF7ADE0076C1D1 /* EarningTests.swift */,
+				906D3A2C20DF9F280076C1D1 /* DividendTests.swift */,
+				906D3A3420DFD7080076C1D1 /* APIClientTests.swift */,
 			);
 			path = StockPortfolioAppTests;
 			sourceTree = "<group>";
@@ -137,6 +170,10 @@
 		90F099EC20C7A004007C0BB3 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				907EAACC20CF390300F9A267 /* DelayedQuote.swift */,
+				90B8C5A820DE15A800DB3E81 /* Chart.swift */,
+				906D3A2620DF6FD80076C1D1 /* Earning.swift */,
+				906D3A2A20DF9E200076C1D1 /* Dividend.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -146,6 +183,11 @@
 			children = (
 				90CA7B3720CD069F003A9C92 /* APIConfiguration.swift */,
 				90CA7B3B20CD0C0B003A9C92 /* StockPriceEndPoint.swift */,
+				906D3A3020DFB92D0076C1D1 /* DelayedQuoteEndPoint.swift */,
+				906D3A3220DFC6A40076C1D1 /* APIClient.swift */,
+				90BF748F20E0C8B700C1DEBB /* ChartEndPoint.swift */,
+				90BF749320E0FC5A00C1DEBB /* DividendEndPoint.swift */,
+				90BF749520E10A0300C1DEBB /* EarningEndPoint.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -308,12 +350,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				90B8C5A920DE15A800DB3E81 /* Chart.swift in Sources */,
+				906D3A2720DF6FD80076C1D1 /* Earning.swift in Sources */,
+				90BF749020E0C8B700C1DEBB /* ChartEndPoint.swift in Sources */,
+				906D3A2B20DF9E200076C1D1 /* Dividend.swift in Sources */,
+				906D3A3120DFB92D0076C1D1 /* DelayedQuoteEndPoint.swift in Sources */,
 				90CA7B3C20CD0C0B003A9C92 /* StockPriceEndPoint.swift in Sources */,
 				90CA7B3620CC3DEA003A9C92 /* StockPortfolioDB.xcdatamodeld in Sources */,
+				90BF749620E10A0300C1DEBB /* EarningEndPoint.swift in Sources */,
 				9081271B20C58BAA00AC3ABB /* ViewController.swift in Sources */,
 				9081271920C58BAA00AC3ABB /* AppDelegate.swift in Sources */,
 				90CA7B3820CD069F003A9C92 /* APIConfiguration.swift in Sources */,
+				907EAACD20CF390300F9A267 /* DelayedQuote.swift in Sources */,
 				907EAAC920CD1CE900F9A267 /* Constants.swift in Sources */,
+				906D3A3320DFC6A40076C1D1 /* APIClient.swift in Sources */,
+				90BF749420E0FC5A00C1DEBB /* DividendEndPoint.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -321,7 +372,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				906D3A2920DF7ADE0076C1D1 /* EarningTests.swift in Sources */,
+				906D3A2D20DF9F280076C1D1 /* DividendTests.swift in Sources */,
 				90CA7B4420CD122C003A9C92 /* StockPortfolioAppTests.swift in Sources */,
+				906D3A3520DFD7080076C1D1 /* APIClientTests.swift in Sources */,
+				90B8C5A720DDEC7C00DB3E81 /* DelayedQuoteTests.swift in Sources */,
+				90B8C5AB20DE2C6900DB3E81 /* ChartTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
