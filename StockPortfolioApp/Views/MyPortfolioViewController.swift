@@ -94,7 +94,7 @@ class MyPortfolioViewController: UIViewController, UITableViewDataSource, UITabl
 // MARK: - Helper Methods
 extension MyPortfolioViewController {
     func autoCompleteText( in textField: UITextField, using string: String, suggestions: [String]) -> Bool {
-        print(suggestions)
+        //print(suggestions)
         if !string.isEmpty,
             let selectedTextRange = textField.selectedTextRange,
             selectedTextRange.end == textField.endOfDocument,
