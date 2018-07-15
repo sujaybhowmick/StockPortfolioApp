@@ -78,7 +78,7 @@ class MyPortfolioViewController: UIViewController, UITableViewDataSource, UITabl
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if let ticker = textField.text {
-            //TODO: - Add ticker to Portfolio and Fire Network Query
+            
             if let stockTicker = getStockTicker(ticker){
                 _ = savePortfolioStock(stockTicker)
                 reloadTableView()
@@ -122,7 +122,7 @@ extension MyPortfolioViewController {
         
         do {
             let autoCompletionPossibilities = try CoreDataStack.shared().fetchStockTickers(predicate, entityName: StockTicker.name)
-            for item in autoCompletionPossibilities! { //2
+            for item in autoCompletionPossibilities! {
                 let ticker = item.ticker!
                 if let substringRange = ticker.range(of: userText){
                     if (!(substringRange.isEmpty)) {
@@ -156,15 +156,19 @@ extension MyPortfolioViewController {
     
     //MARK: - Save Stock ticker to Portfolio
     func savePortfolioStock(_ stockTicker: StockTicker) -> Portfolio? {
-        _ = Portfolio(ticker: stockTicker.ticker!, companyName: stockTicker.companyName!, context: CoreDataStack.shared().context)
-        CoreDataStack.shared().save()
-        let predicate = NSPredicate(format: "ticker == %@", stockTicker.ticker!)
-        do {
-            let portfolio = try CoreDataStack.shared().fetchPortfolio(predicate, entityName: Portfolio.name)
-            resetValues()
+        if let portfolio = getPortfolio(stockTicker.ticker!){
             return portfolio
-        }catch{
-            print(error)
+        }else {
+            _ = Portfolio(ticker: stockTicker.ticker!, companyName: stockTicker.companyName!, context: CoreDataStack.shared().context)
+            CoreDataStack.shared().save()
+            let predicate = NSPredicate(format: "ticker == %@", stockTicker.ticker!)
+            do {
+                let portfolio = try CoreDataStack.shared().fetchPortfolio(predicate, entityName: Portfolio.name)
+                resetValues()
+                return portfolio
+            }catch{
+                print(error)
+            }
         }
         return nil
     }
@@ -178,6 +182,19 @@ extension MyPortfolioViewController {
         }catch {
             print(error)
         }
+    }
+    
+    func getPortfolio(_ ticker: String) -> Portfolio? {
+        do {
+            if let portfolio = try CoreDataStack.shared().fetchPortfolio(NSPredicate(format: "ticker == %@", ticker), entityName: Portfolio.name) {
+                return portfolio
+            }else {
+                return nil
+            }
+        }catch {
+            print(error)
+        }
+        return nil
     }
 }
 
