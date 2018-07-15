@@ -7,8 +7,11 @@
 //
 
 import Alamofire
+import RxSwift
+import RxAlamofire
 
 class APIClient {
+    
     static func performRequest(route: APIConfiguration, completion:@escaping (Result<Data>) -> Void) {
         Alamofire.request(route).responseData { (response) in
             completion(response.result)
@@ -32,6 +35,7 @@ class APIClient {
     }
     
     static func chart(symbol: String, duration: String, completion: @escaping (_ success: Bool, _ result: [Chart]?, _ error: NSError?) -> Void) {
+        
         let chartEndPointEnum = ChartEndPoint.chart(symbol: symbol, duration: duration, endPoint: Constants.ChartEndPoint.apiPath)
         performRequest(route: chartEndPointEnum) { (result) in
             if let value = result.value {
@@ -79,4 +83,20 @@ class APIClient {
         }
     }
     
+    static func financials(symbol: String, completion: @escaping (_ success: Bool, _ result: Financials?, _ error: NSError?) -> Void) {
+        let financialsEndPoint = FinancialsEndPoint.financials(symbol: symbol, endPoint: Constants.FinancialsEndPoint.apiPath)
+        performRequest(route: financialsEndPoint) { (result) in
+            if let value = result.value {
+                do {
+                    let financials = try JSONDecoder().decode(Financials.self, from: value)
+                    completion(true, financials, nil)
+                }catch let error as NSError {
+                    completion(false, nil, error)
+                }
+            }else {
+                completion(false, nil, NSError(domain: "Error getting Dividend Response", code: -1, userInfo: nil))
+            }
+        }
+    }
 }
+

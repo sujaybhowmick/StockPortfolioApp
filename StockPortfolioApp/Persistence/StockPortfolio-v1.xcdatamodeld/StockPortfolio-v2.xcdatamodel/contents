@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14135" systemVersion="17F77" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Portfolio" representedClassName="Portfolio" syncable="YES">
+        <attribute name="companyName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="createdAt" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
-        <attribute name="symbol" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="ticker" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <entity name="StockTicker" representedClassName="StockTicker" syncable="YES">
         <attribute name="companyName" optional="YES" attributeType="String" syncable="YES"/>
@@ -10,7 +11,7 @@
         <attribute name="ticker" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Portfolio" positionX="-54" positionY="9" width="128" height="75"/>
-        <element name="StockTicker" positionX="-54" positionY="36" width="128" height="90"/>
+        <element name="Portfolio" positionX="-54" positionY="-9" width="128" height="90"/>
+        <element name="StockTicker" positionX="-36" positionY="9" width="128" height="90"/>
     </elements>
 </model>

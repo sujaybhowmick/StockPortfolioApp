@@ -29,7 +29,7 @@ enum EarningsEndPoint: APIConfiguration {
     var path: String? {
         switch self {
         case .earning(let symbol, let endPoint):
-            return "/stock/\(symbol)/\(endPoint)"
+            return String(format: Constants.apiPathTemplate.apiPath, symbol, endPoint)
         }
     }
     

@@ -9,8 +9,14 @@
 import Foundation
 
 struct Constants {
+    static let ClientQueueName = "api_client_queue"
     struct ProductionServer {
         static let baseURL = "https://api.iextrading.com/1.0"
+    }
+    
+    struct apiPathTemplate {
+        static let apiPath = "/stock/%@/%@"
+        static let apiPathWithDuration = "/stock/%@/%@/%@"
     }
     
     struct DelayedQuoteEndPoint {
@@ -26,6 +32,9 @@ struct Constants {
     }
     struct EarningsEndPoint {
         static let apiPath = "earnings"
+    }
+    struct FinancialsEndPoint {
+        static let apiPath = "financials"
     }
 }
 

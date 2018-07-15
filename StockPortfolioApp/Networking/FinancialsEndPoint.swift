@@ -1,37 +1,37 @@
 //
-//  DelayedQuoteEndPoint.swift
+//  FinancialsEndPoint.swift
 //  StockPortfolioApp
 //
-//  Created by Sujay Bhowmick on 6/24/18.
+//  Created by Sujay Bhowmick on 6/26/18.
 //  Copyright © 2018 Sujay Bhowmick. All rights reserved.
 //
 
 import Alamofire
 
-enum DelayedQuoteEndPoint: APIConfiguration {
-    case delayedQuote(symbol: String, endPoint: String)
+enum FinancialsEndPoint: APIConfiguration {
+    case financials(symbol: String, endPoint: String)
     
     var parameters: Parameters? {
         switch self {
-        case .delayedQuote( _, _):
+        case .financials( _, _):
             return nil
         }
     }
     
     var method: HTTPMethod {
         switch self {
-        case .delayedQuote( _, _):
+        case .financials( _, _):
             return .get
         }
     }
     
     var path: String? {
         switch self {
-        case .delayedQuote(let symbol, let endPoint):
+        case .financials(let symbol, let endPoint):
             return String(format: Constants.apiPathTemplate.apiPath, symbol, endPoint)
         }
     }
-   
+    
     func asURLRequest() throws -> URLRequest {
         let url = try Constants.ProductionServer.baseURL.asURL()
         
@@ -56,5 +56,4 @@ enum DelayedQuoteEndPoint: APIConfiguration {
         
         return urlRequest
     }
-    
 }

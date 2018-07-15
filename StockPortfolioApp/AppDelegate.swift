@@ -16,7 +16,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        preLoadData()
         return true
+    }
+    
+    private func preLoadData() {
+        let defaults = UserDefaults.standard
+        let isPreloaded = defaults.bool(forKey: "isPreloaded")
+        //CoreDataStack.shared().preLoadData()
+        if !isPreloaded {
+            do {
+                try CoreDataStack.shared().dropAllData()
+            }catch {
+                print(error)
+            }
+            CoreDataStack.shared().preLoadData()
+            defaults.set(true, forKey: "isPreloaded")
+        }
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

@@ -35,9 +35,6 @@ class APIClientTests: XCTestCase {
         APIClient.chart(symbol: "AAPL", duration: Constants.ChartEndPoint.defaultDuration) { (success, chart, error) in
             XCTAssertNil(error)
             XCTAssertNotNil(chart)
-            if let chart = chart {
-                XCTAssertTrue(chart.count == 21)
-            }
             ex.fulfill()
         }
         waitForExpectations(timeout: 10) { (error) in
@@ -72,6 +69,20 @@ class APIClientTests: XCTestCase {
             if let earning = earning {
                 XCTAssertTrue(earning.earnings.count == 4)
             }
+            ex.fulfill()
+        }
+        waitForExpectations(timeout: 10) { (error) in
+            if let error = error {
+                XCTFail("error: \(error)")
+            }
+        }
+    }
+    
+    func testValidateFinancialsRequest(){
+        let ex = expectation(description: "Expecting a JSON data not nil")
+        APIClient.financials(symbol: "AAPL") { (success, financials, error) in
+            XCTAssertNil(error)
+            XCTAssertNotNil(financials)
             ex.fulfill()
         }
         waitForExpectations(timeout: 10) { (error) in

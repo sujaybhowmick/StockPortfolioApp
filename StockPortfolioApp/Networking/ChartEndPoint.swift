@@ -29,7 +29,7 @@ enum ChartEndPoint: APIConfiguration {
     var path: String? {
         switch self {
         case .chart(let symbol, let duration, let endPoint):
-            return "/stock/\(symbol)/\(endPoint)/\(duration)"
+            return String(format: Constants.apiPathTemplate.apiPathWithDuration, symbol, endPoint, duration)
         }
     }
     

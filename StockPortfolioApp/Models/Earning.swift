@@ -37,19 +37,19 @@ struct Earning: Codable {
     
     
     struct EarningsData: Codable {
-        let actualEPS: Double
-        let consensusEPS: Double
-        let estimatedEPS: Double
-        let announceTime: String
-        let numberOfEstimates: Int
-        let epsSurpriseDollar: Double
-        let epsReportDate: String
-        let fiscalPeriod: String
-        let fiscalEndDate: String
-        let yearAgo: Double
-        let yearAgoChangePercent: Double
-        let estimatedChangePercent: Double
-        let symbolId: Int
+        let actualEPS: Double?
+        let consensusEPS: Double?
+        let estimatedEPS: Double?
+        let announceTime: String?
+        let numberOfEstimates: Int?
+        let epsSurpriseDollar: Double?
+        let epsReportDate: String?
+        let fiscalPeriod: String?
+        let fiscalEndDate: String?
+        let yearAgo: Double?
+        let yearAgoChangePercent: Double?
+        let estimatedChangePercent: Double?
+        let symbolId: Int?
         
         enum CodingKeys: String, CodingKey {
             case actualEPS, consensusEPS, estimatedEPS, announceTime, numberOfEstimates, epsSurpriseDollar = "EPSSurpriseDollar", epsReportDate = "EPSReportDate", fiscalPeriod, fiscalEndDate, yearAgo, yearAgoChangePercent, estimatedChangePercent,

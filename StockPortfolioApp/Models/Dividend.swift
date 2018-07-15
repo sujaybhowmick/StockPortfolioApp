@@ -9,14 +9,14 @@
 import Foundation
 
 struct Dividend: Codable {
-    let exDate: String
-    let paymentDate: String
-    let recordDate: String
-    let declaredDate: String
-    let amount: Double
-    let flag: String
-    let type: String
-    let qualified: String
-    let indicated: String
+    let exDate: String?
+    let paymentDate: String?
+    let recordDate: String?
+    let declaredDate: String?
+    let amount: Double?
+    let flag: String?
+    let type: String?
+    let qualified: String?
+    let indicated: String?
     
 }
