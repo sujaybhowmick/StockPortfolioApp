@@ -52,6 +52,7 @@ class MyPortfolioViewController: UIViewController, UITableViewDataSource, UITabl
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "stockCell") as! CustomTableViewCell
+        //cell.backgroundColor  = indexPath.row % 2 == 0 ? UIColor.white : UIColor.lightGray
         let portfolio = self.porfolios[indexPath.row]
         cell.tickerLabel?.text = portfolio.ticker
         cell.companyLabel?.text = portfolio.companyName
