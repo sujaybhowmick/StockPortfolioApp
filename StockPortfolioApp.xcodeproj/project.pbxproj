@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		90386A7F20FC62AB00E881C6 /* PortfolioStockDetailedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90386A7E20FC62AB00E881C6 /* PortfolioStockDetailedViewController.swift */; };
+		90386A8220FD128C00E881C6 /* ChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90386A8120FD128C00E881C6 /* ChartViewController.swift */; };
 		9039455F20F75C2900DBA0A4 /* ClientIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9039455E20F75C2900DBA0A4 /* ClientIntegrationTests.swift */; };
 		9039456120F97EA200DBA0A4 /* Ticker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9039456020F97EA200DBA0A4 /* Ticker.swift */; };
 		9039456420F9804A00DBA0A4 /* TickerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9039456320F9804A00DBA0A4 /* TickerTests.swift */; };
@@ -67,6 +68,7 @@
 		37A3E2A577E5DB2F6077115C /* Pods_StockPortfolioApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StockPortfolioApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7986B371B8D6EF0C27657879 /* Pods-StockPortfolioApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StockPortfolioApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-StockPortfolioApp/Pods-StockPortfolioApp.release.xcconfig"; sourceTree = "<group>"; };
 		90386A7E20FC62AB00E881C6 /* PortfolioStockDetailedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioStockDetailedViewController.swift; sourceTree = "<group>"; };
+		90386A8120FD128C00E881C6 /* ChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartViewController.swift; sourceTree = "<group>"; };
 		9039455E20F75C2900DBA0A4 /* ClientIntegrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientIntegrationTests.swift; sourceTree = "<group>"; };
 		9039456020F97EA200DBA0A4 /* Ticker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ticker.swift; sourceTree = "<group>"; };
 		9039456320F9804A00DBA0A4 /* TickerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickerTests.swift; sourceTree = "<group>"; };
@@ -235,6 +237,7 @@
 				9081271A20C58BAA00AC3ABB /* MyPortfolioViewController.swift */,
 				90F9B1FA20FB927400BBD22C /* CustomTableViewCell.swift */,
 				90386A7E20FC62AB00E881C6 /* PortfolioStockDetailedViewController.swift */,
+				90386A8120FD128C00E881C6 /* ChartViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -520,6 +523,7 @@
 				906D3A3320DFC6A40076C1D1 /* APIClient.swift in Sources */,
 				90BF74B720E6146500C1DEBB /* Stock.swift in Sources */,
 				90BF749420E0FC5A00C1DEBB /* DividendEndPoint.swift in Sources */,
+				90386A8220FD128C00E881C6 /* ChartViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

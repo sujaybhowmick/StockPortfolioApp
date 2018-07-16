@@ -68,8 +68,6 @@ class MyPortfolioViewController: UIViewController, UITableViewDataSource, UITabl
         performSegue(withIdentifier: "detailedSegue", sender: nil)
     }
     
-    
-    
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         
         let subString = (textField.text!.capitalized as NSString).replacingCharacters(in: range, with: string)

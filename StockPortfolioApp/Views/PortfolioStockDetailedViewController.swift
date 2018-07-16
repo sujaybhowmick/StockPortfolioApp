@@ -30,6 +30,10 @@ class PortfolioStockDetailedViewController: UIViewController {
     @IBOutlet weak var debtEq: UILabel!
     @IBOutlet weak var cash: UILabel!
     
+    //MARK: - Line Chart
+   // @IBOutlet weak var lineChartView: LineChartView!
+    
+    
     static var df = DateFormatter()
     
     
@@ -39,6 +43,9 @@ class PortfolioStockDetailedViewController: UIViewController {
         }
     }
     
+    @IBAction func showChart(_ sender: Any) {
+        performSegue(withIdentifier: "chartViewSegue", sender: nil)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -99,33 +106,22 @@ class PortfolioStockDetailedViewController: UIViewController {
                     inBillions?.append("B")
                     self.cash.text = inBillions
                 }
-                
-                
                 PortfolioStockDetailedViewController.df.dateFormat = "yyyy-MM-dd"
                 let reportedDate = PortfolioStockDetailedViewController.df.date(from: (financialLatest?.reportDate)!)
                 PortfolioStockDetailedViewController.df.dateFormat = "MMM dd, yyyy"
                 self.reportedDate.text = PortfolioStockDetailedViewController.df.string(from: reportedDate!)
-                
-                
-                /*var lineChartEntries  = [ChartDataEntry]()
-                PortfolioStockDetailedViewController.df.dateFormat = "mm-dd-yy"
-                
-                for index in 0..<chart.count {
-                    let item = chart[index]
-                    let entry = ChartDataEntry(x: Double(item.close!), y: 1.0)
-                    lineChartEntries.append(entry)
-                }
-                let priceLine = LineChartDataSet(values: lineChartEntries, label: "Price")
-                priceLine.colors = [NSUIColor.blue]
-                let priceData = LineChartData()
-                priceData.addDataSet(priceLine)
-                self.lineChartView.data = priceData
-                self.lineChartView.chartDescription?.text = "Price Graph"
-                self.lineChartView.reloadInputViews()*/
             }
         }, onError: { (error) in
             print(error)
         })
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "chartViewSegue" {
+            if let destination = segue.destination as? ChartViewController {
+                destination.selectedPortfolio = self.selectedPortfolio
+            }
+        }
     }
 }
 
