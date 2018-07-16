@@ -16,7 +16,6 @@
 		906D3A2920DF7ADE0076C1D1 /* EarningTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 906D3A2820DF7ADE0076C1D1 /* EarningTests.swift */; };
 		906D3A2B20DF9E200076C1D1 /* Dividend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 906D3A2A20DF9E200076C1D1 /* Dividend.swift */; };
 		906D3A2D20DF9F280076C1D1 /* DividendTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 906D3A2C20DF9F280076C1D1 /* DividendTests.swift */; };
-		906D3A3120DFB92D0076C1D1 /* DelayedQuoteEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 906D3A3020DFB92D0076C1D1 /* DelayedQuoteEndPoint.swift */; };
 		906D3A3320DFC6A40076C1D1 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 906D3A3220DFC6A40076C1D1 /* APIClient.swift */; };
 		906D3A3520DFD7080076C1D1 /* APIClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 906D3A3420DFD7080076C1D1 /* APIClientTests.swift */; };
 		907EAAC920CD1CE900F9A267 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907EAAC820CD1CE900F9A267 /* Constants.swift */; };
@@ -32,17 +31,12 @@
 		90B8C5A720DDEC7C00DB3E81 /* DelayedQuoteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B8C5A620DDEC7C00DB3E81 /* DelayedQuoteTests.swift */; };
 		90B8C5A920DE15A800DB3E81 /* Chart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B8C5A820DE15A800DB3E81 /* Chart.swift */; };
 		90B8C5AB20DE2C6900DB3E81 /* ChartTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90B8C5AA20DE2C6900DB3E81 /* ChartTests.swift */; };
-		90BF749020E0C8B700C1DEBB /* ChartEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90BF748F20E0C8B700C1DEBB /* ChartEndPoint.swift */; };
-		90BF749420E0FC5A00C1DEBB /* DividendEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90BF749320E0FC5A00C1DEBB /* DividendEndPoint.swift */; };
-		90BF749620E10A0300C1DEBB /* EarningEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90BF749520E10A0300C1DEBB /* EarningEndPoint.swift */; };
 		90BF749820E1424100C1DEBB /* Financials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90BF749720E1424100C1DEBB /* Financials.swift */; };
 		90BF749A20E14F6900C1DEBB /* FinancialsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90BF749920E14F6900C1DEBB /* FinancialsTests.swift */; };
-		90BF749C20E1B69100C1DEBB /* FinancialsEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90BF749B20E1B69100C1DEBB /* FinancialsEndPoint.swift */; };
 		90BF749E20E28AE300C1DEBB /* LastTradedPrice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90BF749D20E28AE300C1DEBB /* LastTradedPrice.swift */; };
 		90BF74A020E28D4900C1DEBB /* LastTradedPriceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90BF749F20E28D4900C1DEBB /* LastTradedPriceTests.swift */; };
 		90BF74A220E30B2600C1DEBB /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90BF74A120E30B2600C1DEBB /* CoreDataStack.swift */; };
 		90BF74B720E6146500C1DEBB /* Stock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90BF74B620E6146500C1DEBB /* Stock.swift */; };
-		90CA7B3820CD069F003A9C92 /* APIConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90CA7B3720CD069F003A9C92 /* APIConfiguration.swift */; };
 		90F9B1F120FB6AFE00BBD22C /* StockPortfolio_v1.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 90F9B1EF20FB6AFE00BBD22C /* StockPortfolio_v1.xcdatamodeld */; };
 		90F9B1F620FB6DE100BBD22C /* StockTicker+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F9B1F220FB6DE100BBD22C /* StockTicker+CoreDataClass.swift */; };
 		90F9B1F720FB6DE100BBD22C /* StockTicker+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F9B1F320FB6DE100BBD22C /* StockTicker+CoreDataProperties.swift */; };
@@ -76,7 +70,6 @@
 		906D3A2820DF7ADE0076C1D1 /* EarningTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EarningTests.swift; sourceTree = "<group>"; };
 		906D3A2A20DF9E200076C1D1 /* Dividend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dividend.swift; sourceTree = "<group>"; };
 		906D3A2C20DF9F280076C1D1 /* DividendTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DividendTests.swift; sourceTree = "<group>"; };
-		906D3A3020DFB92D0076C1D1 /* DelayedQuoteEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DelayedQuoteEndPoint.swift; sourceTree = "<group>"; };
 		906D3A3220DFC6A40076C1D1 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		906D3A3420DFD7080076C1D1 /* APIClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClientTests.swift; sourceTree = "<group>"; };
 		907EAAC820CD1CE900F9A267 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -94,17 +87,12 @@
 		90B8C5A620DDEC7C00DB3E81 /* DelayedQuoteTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DelayedQuoteTests.swift; sourceTree = "<group>"; };
 		90B8C5A820DE15A800DB3E81 /* Chart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chart.swift; sourceTree = "<group>"; };
 		90B8C5AA20DE2C6900DB3E81 /* ChartTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartTests.swift; sourceTree = "<group>"; };
-		90BF748F20E0C8B700C1DEBB /* ChartEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartEndPoint.swift; sourceTree = "<group>"; };
-		90BF749320E0FC5A00C1DEBB /* DividendEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DividendEndPoint.swift; sourceTree = "<group>"; };
-		90BF749520E10A0300C1DEBB /* EarningEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EarningEndPoint.swift; sourceTree = "<group>"; };
 		90BF749720E1424100C1DEBB /* Financials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Financials.swift; sourceTree = "<group>"; };
 		90BF749920E14F6900C1DEBB /* FinancialsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinancialsTests.swift; sourceTree = "<group>"; };
-		90BF749B20E1B69100C1DEBB /* FinancialsEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinancialsEndPoint.swift; sourceTree = "<group>"; };
 		90BF749D20E28AE300C1DEBB /* LastTradedPrice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastTradedPrice.swift; sourceTree = "<group>"; };
 		90BF749F20E28D4900C1DEBB /* LastTradedPriceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastTradedPriceTests.swift; sourceTree = "<group>"; };
 		90BF74A120E30B2600C1DEBB /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		90BF74B620E6146500C1DEBB /* Stock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stock.swift; sourceTree = "<group>"; };
-		90CA7B3720CD069F003A9C92 /* APIConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConfiguration.swift; sourceTree = "<group>"; };
 		90CA7B3920CD0833003A9C92 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		90CA7B4120CD122C003A9C92 /* StockPortfolioAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StockPortfolioAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		90CA7B4520CD122C003A9C92 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -260,13 +248,7 @@
 		90F099ED20C7A011007C0BB3 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				90CA7B3720CD069F003A9C92 /* APIConfiguration.swift */,
-				906D3A3020DFB92D0076C1D1 /* DelayedQuoteEndPoint.swift */,
 				906D3A3220DFC6A40076C1D1 /* APIClient.swift */,
-				90BF748F20E0C8B700C1DEBB /* ChartEndPoint.swift */,
-				90BF749320E0FC5A00C1DEBB /* DividendEndPoint.swift */,
-				90BF749520E10A0300C1DEBB /* EarningEndPoint.swift */,
-				90BF749B20E1B69100C1DEBB /* FinancialsEndPoint.swift */,
 				90A1995520F235F500F2F561 /* EndPoint.swift */,
 				90A1995720F236E700F2F561 /* API.swift */,
 				90A1995920F24E6200F2F561 /* Client.swift */,
@@ -505,24 +487,18 @@
 				90F9B1F920FB6DE100BBD22C /* Portfolio+CoreDataProperties.swift in Sources */,
 				90B8C5A920DE15A800DB3E81 /* Chart.swift in Sources */,
 				906D3A2720DF6FD80076C1D1 /* Earning.swift in Sources */,
-				90BF749020E0C8B700C1DEBB /* ChartEndPoint.swift in Sources */,
 				90BF749820E1424100C1DEBB /* Financials.swift in Sources */,
 				906D3A2B20DF9E200076C1D1 /* Dividend.swift in Sources */,
 				90BF749E20E28AE300C1DEBB /* LastTradedPrice.swift in Sources */,
 				90A1995620F235F500F2F561 /* EndPoint.swift in Sources */,
-				906D3A3120DFB92D0076C1D1 /* DelayedQuoteEndPoint.swift in Sources */,
 				90BF74A220E30B2600C1DEBB /* CoreDataStack.swift in Sources */,
 				90A1995A20F24E6200F2F561 /* Client.swift in Sources */,
-				90BF749620E10A0300C1DEBB /* EarningEndPoint.swift in Sources */,
 				9081271B20C58BAA00AC3ABB /* MyPortfolioViewController.swift in Sources */,
 				9081271920C58BAA00AC3ABB /* AppDelegate.swift in Sources */,
-				90CA7B3820CD069F003A9C92 /* APIConfiguration.swift in Sources */,
 				907EAACD20CF390300F9A267 /* DelayedQuote.swift in Sources */,
-				90BF749C20E1B69100C1DEBB /* FinancialsEndPoint.swift in Sources */,
 				907EAAC920CD1CE900F9A267 /* Constants.swift in Sources */,
 				906D3A3320DFC6A40076C1D1 /* APIClient.swift in Sources */,
 				90BF74B720E6146500C1DEBB /* Stock.swift in Sources */,
-				90BF749420E0FC5A00C1DEBB /* DividendEndPoint.swift in Sources */,
 				90386A8220FD128C00E881C6 /* ChartViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
