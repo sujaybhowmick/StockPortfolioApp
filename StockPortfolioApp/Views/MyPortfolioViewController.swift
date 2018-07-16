@@ -33,18 +33,15 @@ class MyPortfolioViewController: UIViewController, UITableViewDataSource, UITabl
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         //reloadTableView()
+        self.tableView.delegate = self
+        self.tableView.dataSource = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         reloadTableView()
     }
-    
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return porfolios.count
@@ -52,7 +49,6 @@ class MyPortfolioViewController: UIViewController, UITableViewDataSource, UITabl
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "stockCell") as! CustomTableViewCell
-        //cell.backgroundColor  = indexPath.row % 2 == 0 ? UIColor.white : UIColor.lightGray
         let portfolio = self.porfolios[indexPath.row]
         cell.tickerLabel?.text = portfolio.ticker
         cell.companyLabel?.text = portfolio.companyName
@@ -64,9 +60,15 @@ class MyPortfolioViewController: UIViewController, UITableViewDataSource, UITabl
         }, onError: { (error) in
             print(error)
         })
-        
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        //self.tableView.deselectRow(at: indexPath, animated: true)
+        performSegue(withIdentifier: "detailedSegue", sender: nil)
+    }
+    
+    
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         
@@ -83,13 +85,24 @@ class MyPortfolioViewController: UIViewController, UITableViewDataSource, UITabl
             if let stockTicker = getStockTicker(ticker){
                 _ = savePortfolioStock(stockTicker)
                 reloadTableView()
+                return true
             }else {
                 return false
             }
-            return true
         }
         return false
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "detailedSegue" {
+            if let destination = segue.destination as? PortfolioStockDetailedViewController {
+                let rowIndex = self.tableView.indexPathForSelectedRow?.row
+                destination.selectedPortfolio = self.porfolios[rowIndex!]
+            }
+        }
+    }
+   
+    
 }
 
 // MARK: - Helper Methods

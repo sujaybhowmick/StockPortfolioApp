@@ -7,6 +7,7 @@ def sharedPods
     pod 'RxSwift', '~> 4.0'
     pod 'RxCocoa', '~> 4.0'
     pod 'RxAlamofire'
+    pod 'Charts'
 end
 
 target 'StockPortfolioAppTests' do

@@ -18,4 +18,12 @@ extension API {
     static func symbols() -> Endpoint<[Ticker]> {
         return Endpoint(path: "/ref-data/symbols")
     }
+    
+    static func chart() -> Endpoint<[Chart]> {
+        return Endpoint(path: "/stock/%@/chart/1m")
+    }
+    
+    static func financials() -> Endpoint<Financials> {
+        return Endpoint(path: "/stock/%@/financials")
+    }
 }

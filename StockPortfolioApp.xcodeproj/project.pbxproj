@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		90386A7F20FC62AB00E881C6 /* PortfolioStockDetailedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90386A7E20FC62AB00E881C6 /* PortfolioStockDetailedViewController.swift */; };
 		9039455F20F75C2900DBA0A4 /* ClientIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9039455E20F75C2900DBA0A4 /* ClientIntegrationTests.swift */; };
 		9039456120F97EA200DBA0A4 /* Ticker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9039456020F97EA200DBA0A4 /* Ticker.swift */; };
 		9039456420F9804A00DBA0A4 /* TickerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9039456320F9804A00DBA0A4 /* TickerTests.swift */; };
@@ -40,7 +41,6 @@
 		90BF74A020E28D4900C1DEBB /* LastTradedPriceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90BF749F20E28D4900C1DEBB /* LastTradedPriceTests.swift */; };
 		90BF74A220E30B2600C1DEBB /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90BF74A120E30B2600C1DEBB /* CoreDataStack.swift */; };
 		90BF74B720E6146500C1DEBB /* Stock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90BF74B620E6146500C1DEBB /* Stock.swift */; };
-		90BF74BB20E6316A00C1DEBB /* StockPortfolioService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90BF74BA20E6316A00C1DEBB /* StockPortfolioService.swift */; };
 		90CA7B3820CD069F003A9C92 /* APIConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90CA7B3720CD069F003A9C92 /* APIConfiguration.swift */; };
 		90F9B1F120FB6AFE00BBD22C /* StockPortfolio_v1.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 90F9B1EF20FB6AFE00BBD22C /* StockPortfolio_v1.xcdatamodeld */; };
 		90F9B1F620FB6DE100BBD22C /* StockTicker+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F9B1F220FB6DE100BBD22C /* StockTicker+CoreDataClass.swift */; };
@@ -49,6 +49,7 @@
 		90F9B1F920FB6DE100BBD22C /* Portfolio+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F9B1F520FB6DE100BBD22C /* Portfolio+CoreDataProperties.swift */; };
 		90F9B1FB20FB927400BBD22C /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F9B1FA20FB927400BBD22C /* CustomTableViewCell.swift */; };
 		F961AADF880B1F791A562D52 /* Pods_StockPortfolioApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37A3E2A577E5DB2F6077115C /* Pods_StockPortfolioApp.framework */; };
+		FDC09DAF9018D554B22E847F /* Pods_StockPortfolioAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1284F88ADA2AC37CF03F2BBF /* Pods_StockPortfolioAppTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,8 +63,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1284F88ADA2AC37CF03F2BBF /* Pods_StockPortfolioAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StockPortfolioAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		37A3E2A577E5DB2F6077115C /* Pods_StockPortfolioApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StockPortfolioApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7986B371B8D6EF0C27657879 /* Pods-StockPortfolioApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StockPortfolioApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-StockPortfolioApp/Pods-StockPortfolioApp.release.xcconfig"; sourceTree = "<group>"; };
+		90386A7E20FC62AB00E881C6 /* PortfolioStockDetailedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioStockDetailedViewController.swift; sourceTree = "<group>"; };
 		9039455E20F75C2900DBA0A4 /* ClientIntegrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientIntegrationTests.swift; sourceTree = "<group>"; };
 		9039456020F97EA200DBA0A4 /* Ticker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ticker.swift; sourceTree = "<group>"; };
 		9039456320F9804A00DBA0A4 /* TickerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickerTests.swift; sourceTree = "<group>"; };
@@ -99,7 +102,6 @@
 		90BF749F20E28D4900C1DEBB /* LastTradedPriceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastTradedPriceTests.swift; sourceTree = "<group>"; };
 		90BF74A120E30B2600C1DEBB /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		90BF74B620E6146500C1DEBB /* Stock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stock.swift; sourceTree = "<group>"; };
-		90BF74BA20E6316A00C1DEBB /* StockPortfolioService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockPortfolioService.swift; sourceTree = "<group>"; };
 		90CA7B3720CD069F003A9C92 /* APIConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConfiguration.swift; sourceTree = "<group>"; };
 		90CA7B3920CD0833003A9C92 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		90CA7B4120CD122C003A9C92 /* StockPortfolioAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StockPortfolioAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -110,6 +112,8 @@
 		90F9B1F420FB6DE100BBD22C /* Portfolio+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Portfolio+CoreDataClass.swift"; sourceTree = "<group>"; };
 		90F9B1F520FB6DE100BBD22C /* Portfolio+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Portfolio+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		90F9B1FA20FB927400BBD22C /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
+		AC606364A20009EE86E7FE25 /* Pods-StockPortfolioAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StockPortfolioAppTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-StockPortfolioAppTests/Pods-StockPortfolioAppTests.debug.xcconfig"; sourceTree = "<group>"; };
+		DD2C9901A85FDB041744A2B8 /* Pods-StockPortfolioAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StockPortfolioAppTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-StockPortfolioAppTests/Pods-StockPortfolioAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		F1CDBDC867A257926BB37747 /* Pods-StockPortfolioApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StockPortfolioApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-StockPortfolioApp/Pods-StockPortfolioApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -126,6 +130,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FDC09DAF9018D554B22E847F /* Pods_StockPortfolioAppTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,6 +142,8 @@
 			children = (
 				F1CDBDC867A257926BB37747 /* Pods-StockPortfolioApp.debug.xcconfig */,
 				7986B371B8D6EF0C27657879 /* Pods-StockPortfolioApp.release.xcconfig */,
+				AC606364A20009EE86E7FE25 /* Pods-StockPortfolioAppTests.debug.xcconfig */,
+				DD2C9901A85FDB041744A2B8 /* Pods-StockPortfolioAppTests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -190,7 +197,6 @@
 			isa = PBXGroup;
 			children = (
 				90F099EE20C7A01A007C0BB3 /* Persistence */,
-				90BF74B320E613A300C1DEBB /* Service */,
 				90F099ED20C7A011007C0BB3 /* Networking */,
 				90F099EC20C7A004007C0BB3 /* Models */,
 				90F099EA20C79FF0007C0BB3 /* Views */,
@@ -212,14 +218,6 @@
 			path = Networking;
 			sourceTree = "<group>";
 		};
-		90BF74B320E613A300C1DEBB /* Service */ = {
-			isa = PBXGroup;
-			children = (
-				90BF74BA20E6316A00C1DEBB /* StockPortfolioService.swift */,
-			);
-			path = Service;
-			sourceTree = "<group>";
-		};
 		90CA7B4220CD122C003A9C92 /* StockPortfolioAppTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -236,6 +234,7 @@
 			children = (
 				9081271A20C58BAA00AC3ABB /* MyPortfolioViewController.swift */,
 				90F9B1FA20FB927400BBD22C /* CustomTableViewCell.swift */,
+				90386A7E20FC62AB00E881C6 /* PortfolioStockDetailedViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -287,6 +286,7 @@
 			children = (
 				90CA7B3920CD0833003A9C92 /* Alamofire.framework */,
 				37A3E2A577E5DB2F6077115C /* Pods_StockPortfolioApp.framework */,
+				1284F88ADA2AC37CF03F2BBF /* Pods_StockPortfolioAppTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -317,9 +317,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 90CA7B4820CD122C003A9C92 /* Build configuration list for PBXNativeTarget "StockPortfolioAppTests" */;
 			buildPhases = (
+				DA1E59BF924F9AD4E1B026CB /* [CP] Check Pods Manifest.lock */,
 				90CA7B3D20CD122C003A9C92 /* Sources */,
 				90CA7B3E20CD122C003A9C92 /* Frameworks */,
 				90CA7B3F20CD122C003A9C92 /* Resources */,
+				971D97C50403DCFC4B4C6718 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -390,14 +392,15 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		D67C53FC193C9C20E6624774 /* [CP] Embed Pods Frameworks */ = {
+		971D97C50403DCFC4B4C6718 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-StockPortfolioApp/Pods-StockPortfolioApp-frameworks.sh",
+				"${SRCROOT}/Pods/Target Support Files/Pods-StockPortfolioAppTests/Pods-StockPortfolioAppTests-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Charts/Charts.framework",
 				"${BUILT_PRODUCTS_DIR}/RxAlamofire/RxAlamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
@@ -406,6 +409,35 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Charts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxAlamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-StockPortfolioAppTests/Pods-StockPortfolioAppTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D67C53FC193C9C20E6624774 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-StockPortfolioApp/Pods-StockPortfolioApp-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Charts/Charts.framework",
+				"${BUILT_PRODUCTS_DIR}/RxAlamofire/RxAlamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Charts.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxAlamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
@@ -414,6 +446,24 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-StockPortfolioApp/Pods-StockPortfolioApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DA1E59BF924F9AD4E1B026CB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-StockPortfolioAppTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		EEBEBA1B10CF49C3390B5F1E /* [CP] Check Pods Manifest.lock */ = {
@@ -447,6 +497,7 @@
 				90F9B1F120FB6AFE00BBD22C /* StockPortfolio_v1.xcdatamodeld in Sources */,
 				90F9B1F620FB6DE100BBD22C /* StockTicker+CoreDataClass.swift in Sources */,
 				90F9B1FB20FB927400BBD22C /* CustomTableViewCell.swift in Sources */,
+				90386A7F20FC62AB00E881C6 /* PortfolioStockDetailedViewController.swift in Sources */,
 				90F9B1F820FB6DE100BBD22C /* Portfolio+CoreDataClass.swift in Sources */,
 				90F9B1F920FB6DE100BBD22C /* Portfolio+CoreDataProperties.swift in Sources */,
 				90B8C5A920DE15A800DB3E81 /* Chart.swift in Sources */,
@@ -454,7 +505,6 @@
 				90BF749020E0C8B700C1DEBB /* ChartEndPoint.swift in Sources */,
 				90BF749820E1424100C1DEBB /* Financials.swift in Sources */,
 				906D3A2B20DF9E200076C1D1 /* Dividend.swift in Sources */,
-				90BF74BB20E6316A00C1DEBB /* StockPortfolioService.swift in Sources */,
 				90BF749E20E28AE300C1DEBB /* LastTradedPrice.swift in Sources */,
 				90A1995620F235F500F2F561 /* EndPoint.swift in Sources */,
 				906D3A3120DFB92D0076C1D1 /* DelayedQuoteEndPoint.swift in Sources */,
@@ -673,6 +723,7 @@
 		};
 		90CA7B4920CD122C003A9C92 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AC606364A20009EE86E7FE25 /* Pods-StockPortfolioAppTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -693,6 +744,7 @@
 		};
 		90CA7B4A20CD122C003A9C92 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DD2C9901A85FDB041744A2B8 /* Pods-StockPortfolioAppTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;

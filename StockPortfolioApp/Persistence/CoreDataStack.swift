@@ -82,7 +82,6 @@ struct CoreDataStack {
 internal extension CoreDataStack  {
     
     func dropAllData() throws {
-        
         try coordinator.destroyPersistentStore(at: dbURL, ofType:NSSQLiteStoreType , options: nil)
         try addStoreCoordinator(NSSQLiteStoreType, configuration: nil, storeURL: dbURL, options: nil)
     }
