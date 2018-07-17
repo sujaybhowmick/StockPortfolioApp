@@ -11,7 +11,9 @@
 
 #### API Provider for Financial Markets Data
 
-https://iextrading.com/developer/docs/
+The Market data is provided for free by [IEX](https://iextrading.com/developer/) through their [IEX Developer Platform](https://iextrading.com/developer/).
+
+API documentation - https://iextrading.com/developer/docs/
 
 #### Application flow and Screen Cast
 
