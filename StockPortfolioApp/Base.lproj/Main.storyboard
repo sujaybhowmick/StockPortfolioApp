@@ -24,7 +24,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8LA-eI-Z6J" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-969" y="56"/>
+            <point key="canvasLocation" x="-1330" y="54"/>
         </scene>
         <!--My Portfolio-->
         <scene sceneID="sYz-9w-H5p">
@@ -55,8 +55,11 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Obl-nZ-3pu">
                                                 <rect key="frame" x="0.0" y="50" width="375" height="553"/>
                                                 <subviews>
+                                                    <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="jlr-5m-lTb">
+                                                        <rect key="frame" x="0.0" y="0.0" width="375" height="20"/>
+                                                    </activityIndicatorView>
                                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="mpc-sj-awX" userLabel="StockTableView">
-                                                        <rect key="frame" x="0.0" y="0.0" width="375" height="553"/>
+                                                        <rect key="frame" x="0.0" y="20" width="375" height="533"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <prototypes>
                                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="stockCell" id="hVC-jk-YJH" customClass="CustomTableViewCell" customModule="StockPortfolioApp" customModuleProvider="target">
@@ -129,6 +132,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="My Portfolio" id="W9h-ua-TvG"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="jlr-5m-lTb" id="2d5-8I-VnB"/>
                         <outlet property="searchTextField" destination="RYd-X5-oXf" id="M2y-GI-2r5"/>
                         <outlet property="tableView" destination="mpc-sj-awX" id="wpx-BS-wc9"/>
                         <segue destination="E00-7P-PI4" kind="show" identifier="detailedSegue" id="Swq-LL-IKa"/>
@@ -136,7 +140,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FW7-Xi-lwb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-217.24137931034485" y="61.600000000000001"/>
+            <point key="canvasLocation" x="-469.60000000000002" y="53.523238380809602"/>
         </scene>
         <!--Stock Details-->
         <scene sceneID="8dP-ni-ogT">
@@ -149,8 +153,11 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="3vs-FE-9xd">
                                 <rect key="frame" x="20" y="84" width="335" height="583"/>
                                 <subviews>
+                                    <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="Ogc-Ra-9IP">
+                                        <rect key="frame" x="0.0" y="0.0" width="335" height="20"/>
+                                    </activityIndicatorView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="ute-nN-GlY">
-                                        <rect key="frame" x="0.0" y="0.0" width="335" height="583"/>
+                                        <rect key="frame" x="0.0" y="20" width="335" height="563"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="P6p-Q1-bIR">
                                                 <rect key="frame" x="0.0" y="0.0" width="335" height="544.5"/>
@@ -605,6 +612,7 @@
                         <outlet property="profit" destination="GXD-e1-Z9s" id="m9N-y0-0vE"/>
                         <outlet property="reportedDate" destination="cbr-im-Fl2" id="j7r-i0-PuJ"/>
                         <outlet property="revenue" destination="ao2-MY-fAu" id="wy1-9l-6i0"/>
+                        <outlet property="stockInfoActivityIndicator" destination="Ogc-Ra-9IP" id="xmj-pc-AZ6"/>
                         <outlet property="ticker" destination="2t5-ah-3lm" id="STB-T2-zID"/>
                         <outlet property="week52Change" destination="Cy1-Ed-b0G" id="UbR-BP-iee"/>
                         <outlet property="week52High" destination="qVf-yV-wMH" id="PKH-Vb-9xS"/>
@@ -614,7 +622,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uYs-up-kEu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="524" y="55"/>
+            <point key="canvasLocation" x="340" y="55"/>
         </scene>
         <!--Chart-->
         <scene sceneID="3Sq-mI-7vO">
@@ -644,7 +652,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ntt-xM-12H" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1261.5999999999999" y="53.523238380809602"/>
+            <point key="canvasLocation" x="1180" y="54"/>
         </scene>
     </scenes>
 </document>

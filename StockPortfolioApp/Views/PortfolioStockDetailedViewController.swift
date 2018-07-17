@@ -13,6 +13,7 @@ import Charts
 class PortfolioStockDetailedViewController: UIViewController {
     var selectedPortfolio: Portfolio?
     
+    @IBOutlet weak var stockInfoActivityIndicator: UIActivityIndicatorView!
     //MARK: - Stock Quote
     @IBOutlet weak var ticker: UILabel!
     @IBOutlet weak var price: UILabel!
@@ -47,47 +48,45 @@ class PortfolioStockDetailedViewController: UIViewController {
     static var df = DateFormatter()
     static let currencyFormatter = NumberFormatter()
     
-    
-    func performUIUpdatesOnMain(_ updates: @escaping () -> Void) {
-        DispatchQueue.main.async {
-            updates()
-        }
-    }
-    
     @IBAction func showChart(_ sender: Any) {
         performSegue(withIdentifier: "chartViewSegue", sender: nil)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-        PortfolioStockDetailedViewController.currencyFormatter.usesGroupingSeparator = true
-        PortfolioStockDetailedViewController.currencyFormatter.numberStyle = .currency
-        // localize to your grouping and decimal separator
-        PortfolioStockDetailedViewController.currencyFormatter.locale = Locale(identifier: "en_US")
-        self.showStockQuote()
-        self.showFinancials()
-        self.showEarnings()
+        let client = Client.sharedInstance
+        if client.isConnectedToInternet(){
+            PortfolioStockDetailedViewController.currencyFormatter.usesGroupingSeparator = true
+            PortfolioStockDetailedViewController.currencyFormatter.numberStyle = .currency
+            PortfolioStockDetailedViewController.currencyFormatter.locale = Locale(identifier: "en_US")
+            self.showStockQuote()
+            self.showFinancials()
+            self.showEarnings()
+        }else {
+            showInfo(withMessage: "Network connection not available")
+        }
     }
     
     //MARK: - Stock Quote Section
     private func showStockQuote() {
-       
-        let client = Client.sharedInstance
+       let client = Client.sharedInstance
+        
         _ = client.request(selectedPortfolio?.ticker, API.delayedQuote()).subscribe(onSuccess: { (delayedQuote) in
-            self.performUIUpdatesOnMain {
+            DispatchQueue.main.async {
                 self.ticker.text = self.selectedPortfolio?.ticker
                 self.price.text = PortfolioStockDetailedViewController.currencyFormatter.string(from: delayedQuote.price! as NSNumber)
                 self.high.text = PortfolioStockDetailedViewController.currencyFormatter.string(from: delayedQuote.high! as NSNumber)
                 self.low.text = PortfolioStockDetailedViewController.currencyFormatter.string(from: delayedQuote.low! as NSNumber)
                 PortfolioStockDetailedViewController.df.dateFormat = "MMM dd, yyyy HH:mm:ss"
                 self.date.text = PortfolioStockDetailedViewController.df.string(from: delayedQuote.priceTime!)
+                
             }
         }, onError: { (error) in
             self.showInfo(withMessage: "Error fetching Stock Quote")
+            
         })
         _ = client.request(selectedPortfolio?.ticker, API.keyStats()).subscribe(onSuccess: { (keyStats) in
-            self.performUIUpdatesOnMain {
+            DispatchQueue.main.async {
                 if let week52High = keyStats.week52high {
                     self.week52High.text = String(format: "%.2f", week52High)
                 }
@@ -102,7 +101,6 @@ class PortfolioStockDetailedViewController: UIViewController {
                     inBillions?.append("B")
                     self.mktCap.text = inBillions
                 }
-            
             }
         }, onError: { (error) in
             self.showInfo(withMessage: "Error fetching Key Stats")
@@ -112,9 +110,9 @@ class PortfolioStockDetailedViewController: UIViewController {
     //MARK: - Financials Section
     private func showFinancials() {
         let client = Client.sharedInstance
+        
         _ = client.request(selectedPortfolio?.ticker, API.financials()).subscribe(onSuccess: { (financials) in
-            
-            self.performUIUpdatesOnMain {
+            DispatchQueue.main.async {
                 let financialLatest = financials.financials.compactMap { $0 }.first
                 if let profit = financialLatest?.grossProfit {
                     var inBillions = PortfolioStockDetailedViewController.currencyFormatter.string(from: self.covertToBillion(profit)! as NSNumber)
@@ -152,14 +150,16 @@ class PortfolioStockDetailedViewController: UIViewController {
             }
         }, onError: { (error) in
             self.showInfo(withMessage: "Error fetching Financials")
+            
         })
     }
     
     //MARK: - Earnings Section
     private func showEarnings() {
         let client = Client.sharedInstance
+        
         _ = client.request(selectedPortfolio?.ticker, API.earnings()).subscribe(onSuccess: { (earning) in
-            self.performUIUpdatesOnMain {
+            DispatchQueue.main.async {
                 let earningsLatest = earning.earnings.compactMap{ $0 }.first
                 if let eps = earningsLatest?.actualEPS {
                     self.eps.text = String(format: "%.2f", eps)
@@ -186,6 +186,7 @@ class PortfolioStockDetailedViewController: UIViewController {
             }
         }, onError: { (error) in
             self.showInfo(withMessage: "Error fetching Earnings")
+            
         })
             
     }
@@ -205,7 +206,7 @@ extension PortfolioStockDetailedViewController {
     }
     
     private func showInfo(withTitle: String = "Info", withMessage: String, action: (() -> Void)? = nil) {
-        performUIUpdatesOnMain {
+        DispatchQueue.main.async {
             let ac = UIAlertController(title: withTitle, message: withMessage, preferredStyle: .alert)
             ac.addAction(UIAlertAction(title: "OK", style: .default, handler: {(alertAction) in
                 action?()
@@ -213,4 +214,15 @@ extension PortfolioStockDetailedViewController {
             self.present(ac, animated: true)
         }
     }
+    
+    /*func toggleActivityIndicator(_ activityIndicator: UIActivityIndicatorView){
+        DispatchQueue.main.async {
+            if activityIndicator.isAnimating {
+                activityIndicator.stopAnimating()
+            }else {
+                activityIndicator.startAnimating()
+            }
+        }
+    }*/
+    
 }

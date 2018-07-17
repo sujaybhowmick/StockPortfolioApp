@@ -14,13 +14,7 @@ class ChartViewController: UIViewController {
     var selectedPortfolio: Portfolio?
     
     @IBOutlet weak var lineChartView: LineChartView!
-    
-    func performUIUpdatesOnMain(_ updates: @escaping () -> Void) {
-        DispatchQueue.main.async {
-            updates()
-        }
-    }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -29,7 +23,7 @@ class ChartViewController: UIViewController {
         super.viewWillAppear(animated)
         let client = Client.sharedInstance
         _ = client.request(selectedPortfolio?.ticker, API.chart()).subscribe(onSuccess: { (charts) in
-            self.performUIUpdatesOnMain {
+            DispatchQueue.main.async {
                 var lineChartEntries  = [ChartDataEntry]()
                 PortfolioStockDetailedViewController.df.dateFormat = "mm-dd-yy"
                 
@@ -53,7 +47,7 @@ class ChartViewController: UIViewController {
 
 extension ChartViewController {
     private func showInfo(withTitle: String = "Info", withMessage: String, action: (() -> Void)? = nil) {
-        performUIUpdatesOnMain {
+        DispatchQueue.main.async {
             let ac = UIAlertController(title: withTitle, message: withMessage, preferredStyle: .alert)
             ac.addAction(UIAlertAction(title: "OK", style: .default, handler: {(alertAction) in
                 action?()

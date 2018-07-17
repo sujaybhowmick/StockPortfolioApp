@@ -28,6 +28,17 @@ final class Client {
         return Singleton.shared
     }
     
+    private static func connectivity() -> NetworkReachabilityManager {
+        struct Singleton {
+            static let shared = NetworkReachabilityManager()
+        }
+        return Singleton.shared!
+    }
+    
+    func isConnectedToInternet() -> Bool {
+        return Client.connectivity().isReachable
+    }
+    
     func request<Response>(_ endpoint: Endpoint<Response>) -> Single<Response> {
         return request(nil, endpoint)
     }

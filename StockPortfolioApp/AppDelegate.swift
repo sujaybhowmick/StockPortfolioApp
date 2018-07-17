@@ -7,15 +7,20 @@
 //
 
 import UIKit
+import AlamofireNetworkActivityIndicator
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        NetworkActivityIndicatorManager.shared.isEnabled = true
+        NetworkActivityIndicatorManager.shared.startDelay = 0.5
+        NetworkActivityIndicatorManager.shared.completionDelay = 0.5
         preLoadData()
         return true
     }
@@ -23,12 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     private func preLoadData() {
         let defaults = UserDefaults.standard
         let isPreloaded = defaults.bool(forKey: "isPreloaded")
-        do {
-            try CoreDataStack.shared().dropAllData()
-        }catch {
-            print(error)
-        }
-        CoreDataStack.shared().preLoadData()
+      
         if !isPreloaded {
             do {
                 try CoreDataStack.shared().dropAllData()

@@ -16,19 +16,14 @@ class MyPortfolioViewController: UIViewController, UITableViewDataSource, UITabl
     
     var porfolios = [Portfolio]()
     
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     @IBOutlet weak var tableView: UITableView!
     
     var appDelegate: AppDelegate {
         return UIApplication.shared.delegate as! AppDelegate
     }
-    
-    func performUIUpdatesOnMain(_ updates: @escaping () -> Void) {
-        DispatchQueue.main.async {
-            updates()
-        }
-    }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -53,13 +48,17 @@ class MyPortfolioViewController: UIViewController, UITableViewDataSource, UITabl
         cell.tickerLabel?.text = portfolio.ticker
         cell.companyLabel?.text = portfolio.companyName
         let client = Client.sharedInstance
-        _ = client.request(portfolio.ticker!, API.delayedQuote()).subscribe(onSuccess: { (delayedQuote) in
-            self.performUIUpdatesOnMain {
-                cell.priceLabel.text = String(format: "%.2f", delayedQuote.price ?? "Not Available")
-            }
-        }, onError: { (error) in
-            self.showInfo(withMessage: "Error fetching Stock Quote")
-        })
+        if client.isConnectedToInternet() {
+            _ = client.request(portfolio.ticker!, API.delayedQuote()).subscribe(onSuccess: { (delayedQuote) in
+                DispatchQueue.main.async {
+                    cell.priceLabel.text = String(format: "%.2f", delayedQuote.price ?? "Not Available")
+                }
+            }, onError: { (error) in
+                self.showInfo(withMessage: "Error fetching Stock Quote")
+            })
+        }else {
+            self.showInfo(withMessage: "Network connection not available")
+        }
         return cell
     }
     
@@ -78,6 +77,7 @@ class MyPortfolioViewController: UIViewController, UITableViewDataSource, UITabl
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
         if let ticker = textField.text {
             
             if let stockTicker = getStockTicker(ticker){
@@ -209,8 +209,18 @@ extension MyPortfolioViewController {
         return nil
     }
     
+    /*func toggleActivityIndicator(){
+        DispatchQueue.main.async {
+            if self.activityIndicator.isAnimating {
+                self.activityIndicator.stopAnimating()
+            }else {
+                self.activityIndicator.startAnimating()
+            }
+        }
+    }*/
+    
     private func showInfo(withTitle: String = "Info", withMessage: String, action: (() -> Void)? = nil) {
-        performUIUpdatesOnMain {
+        DispatchQueue.main.async {
             let ac = UIAlertController(title: withTitle, message: withMessage, preferredStyle: .alert)
             ac.addAction(UIAlertAction(title: "OK", style: .default, handler: {(alertAction) in
                 action?()
