@@ -16,7 +16,7 @@ class MyPortfolioViewController: UIViewController, UITableViewDataSource, UITabl
     
     var porfolios = [Portfolio]()
     
-    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    var activityIndicator: UIActivityIndicatorView!
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -26,10 +26,10 @@ class MyPortfolioViewController: UIViewController, UITableViewDataSource, UITabl
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        //reloadTableView()
         self.tableView.delegate = self
         self.tableView.dataSource = self
+        activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: .gray)
+        self.tableView.backgroundView = activityIndicator
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -49,21 +49,24 @@ class MyPortfolioViewController: UIViewController, UITableViewDataSource, UITabl
         cell.companyLabel?.text = portfolio.companyName
         let client = Client.sharedInstance
         if client.isConnectedToInternet() {
+            self.startAnimating()
             _ = client.request(portfolio.ticker!, API.delayedQuote()).subscribe(onSuccess: { (delayedQuote) in
                 DispatchQueue.main.async {
                     cell.priceLabel.text = String(format: "%.2f", delayedQuote.price ?? "Not Available")
                 }
+                self.stopAnimating()
             }, onError: { (error) in
                 self.showInfo(withMessage: "Error fetching Stock Quote")
+                self.stopAnimating()
             })
         }else {
             self.showInfo(withMessage: "Network connection not available")
+            self.stopAnimating()
         }
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //self.tableView.deselectRow(at: indexPath, animated: true)
         performSegue(withIdentifier: "detailedSegue", sender: nil)
     }
     
@@ -106,7 +109,6 @@ class MyPortfolioViewController: UIViewController, UITableViewDataSource, UITabl
 // MARK: - Helper Methods
 extension MyPortfolioViewController {
     func autoCompleteText( in textField: UITextField, using string: String, suggestions: [String]) -> Bool {
-        //print(suggestions)
         if !string.isEmpty,
             let selectedTextRange = textField.selectedTextRange,
             selectedTextRange.end == textField.endOfDocument,
@@ -209,15 +211,17 @@ extension MyPortfolioViewController {
         return nil
     }
     
-    /*func toggleActivityIndicator(){
+    func startAnimating(){
         DispatchQueue.main.async {
-            if self.activityIndicator.isAnimating {
-                self.activityIndicator.stopAnimating()
-            }else {
-                self.activityIndicator.startAnimating()
-            }
+           self.activityIndicator.startAnimating()
         }
-    }*/
+    }
+    
+    func stopAnimating(){
+        DispatchQueue.main.async {
+            self.activityIndicator.stopAnimating()
+        }
+    }
     
     private func showInfo(withTitle: String = "Info", withMessage: String, action: (() -> Void)? = nil) {
         DispatchQueue.main.async {

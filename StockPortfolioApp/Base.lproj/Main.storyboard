@@ -55,11 +55,8 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Obl-nZ-3pu">
                                                 <rect key="frame" x="0.0" y="50" width="375" height="553"/>
                                                 <subviews>
-                                                    <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="jlr-5m-lTb">
-                                                        <rect key="frame" x="0.0" y="0.0" width="375" height="20"/>
-                                                    </activityIndicatorView>
                                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="mpc-sj-awX" userLabel="StockTableView">
-                                                        <rect key="frame" x="0.0" y="20" width="375" height="533"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="375" height="553"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <prototypes>
                                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="stockCell" id="hVC-jk-YJH" customClass="CustomTableViewCell" customModule="StockPortfolioApp" customModuleProvider="target">
@@ -132,7 +129,6 @@
                     </view>
                     <navigationItem key="navigationItem" title="My Portfolio" id="W9h-ua-TvG"/>
                     <connections>
-                        <outlet property="activityIndicator" destination="jlr-5m-lTb" id="2d5-8I-VnB"/>
                         <outlet property="searchTextField" destination="RYd-X5-oXf" id="M2y-GI-2r5"/>
                         <outlet property="tableView" destination="mpc-sj-awX" id="wpx-BS-wc9"/>
                         <segue destination="E00-7P-PI4" kind="show" identifier="detailedSegue" id="Swq-LL-IKa"/>
@@ -153,14 +149,11 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="3vs-FE-9xd">
                                 <rect key="frame" x="20" y="84" width="335" height="583"/>
                                 <subviews>
-                                    <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="Ogc-Ra-9IP">
-                                        <rect key="frame" x="0.0" y="0.0" width="335" height="20"/>
-                                    </activityIndicatorView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="ute-nN-GlY">
-                                        <rect key="frame" x="0.0" y="20" width="335" height="563"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="335" height="583"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="P6p-Q1-bIR">
-                                                <rect key="frame" x="0.0" y="0.0" width="335" height="544.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="335" height="574.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Stock Stats" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Nk-F8-OLE" userLabel="StockQuoteLabel">
                                                         <rect key="frame" x="0.0" y="0.0" width="335" height="24"/>
@@ -557,7 +550,7 @@
                                                         </constraints>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="kO6-uV-bGa">
-                                                        <rect key="frame" x="0.0" y="514.5" width="335" height="30"/>
+                                                        <rect key="frame" x="0.0" y="514.5" width="335" height="60"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zUJ-qp-too">
                                                                 <rect key="frame" x="0.0" y="0.0" width="335" height="30"/>
@@ -572,6 +565,15 @@
                                                                             <action selector="showChart:" destination="E00-7P-PI4" eventType="touchUpInside" id="70z-f0-KyX"/>
                                                                         </connections>
                                                                     </button>
+                                                                </subviews>
+                                                            </stackView>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wca-O8-qHO">
+                                                                <rect key="frame" x="0.0" y="40" width="335" height="20"/>
+                                                                <subviews>
+                                                                    <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="rt7-d0-7Ws">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="335" height="20"/>
+                                                                        <color key="color" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    </activityIndicatorView>
                                                                 </subviews>
                                                             </stackView>
                                                         </subviews>
@@ -594,6 +596,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Stock Details" id="PqZ-3B-WdI"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="rt7-d0-7Ws" id="e60-mT-uqk"/>
                         <outlet property="cash" destination="hs3-Nm-wI0" id="wbv-td-6mG"/>
                         <outlet property="change" destination="oKZ-uD-aSX" id="RaA-VG-9Df"/>
                         <outlet property="date" destination="5oD-Sb-B1M" id="cFp-P1-Wgh"/>
@@ -612,7 +615,6 @@
                         <outlet property="profit" destination="GXD-e1-Z9s" id="m9N-y0-0vE"/>
                         <outlet property="reportedDate" destination="cbr-im-Fl2" id="j7r-i0-PuJ"/>
                         <outlet property="revenue" destination="ao2-MY-fAu" id="wy1-9l-6i0"/>
-                        <outlet property="stockInfoActivityIndicator" destination="Ogc-Ra-9IP" id="xmj-pc-AZ6"/>
                         <outlet property="ticker" destination="2t5-ah-3lm" id="STB-T2-zID"/>
                         <outlet property="week52Change" destination="Cy1-Ed-b0G" id="UbR-BP-iee"/>
                         <outlet property="week52High" destination="qVf-yV-wMH" id="PKH-Vb-9xS"/>
@@ -634,6 +636,12 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wMc-B4-k4M" customClass="LineChartView" customModule="Charts">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <subviews>
+                                    <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="I4V-vZ-oVd">
+                                        <rect key="frame" x="177" y="276" width="20" height="20"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </activityIndicatorView>
+                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                         </subviews>
@@ -647,6 +655,7 @@
                         <viewLayoutGuide key="safeArea" id="xkm-CZ-nwb"/>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="I4V-vZ-oVd" id="lWs-7r-nki"/>
                         <outlet property="lineChartView" destination="wMc-B4-k4M" id="ZhQ-3T-2eM"/>
                     </connections>
                 </viewController>

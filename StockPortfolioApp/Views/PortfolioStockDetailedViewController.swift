@@ -13,7 +13,7 @@ import Charts
 class PortfolioStockDetailedViewController: UIViewController {
     var selectedPortfolio: Portfolio?
     
-    @IBOutlet weak var stockInfoActivityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     //MARK: - Stock Quote
     @IBOutlet weak var ticker: UILabel!
     @IBOutlet weak var price: UILabel!
@@ -70,7 +70,7 @@ class PortfolioStockDetailedViewController: UIViewController {
     //MARK: - Stock Quote Section
     private func showStockQuote() {
        let client = Client.sharedInstance
-        
+        self.startAnimating()
         _ = client.request(selectedPortfolio?.ticker, API.delayedQuote()).subscribe(onSuccess: { (delayedQuote) in
             DispatchQueue.main.async {
                 self.ticker.text = self.selectedPortfolio?.ticker
@@ -79,19 +79,21 @@ class PortfolioStockDetailedViewController: UIViewController {
                 self.low.text = PortfolioStockDetailedViewController.currencyFormatter.string(from: delayedQuote.low! as NSNumber)
                 PortfolioStockDetailedViewController.df.dateFormat = "MMM dd, yyyy HH:mm:ss"
                 self.date.text = PortfolioStockDetailedViewController.df.string(from: delayedQuote.priceTime!)
-                
             }
+            self.stopAnimating()
         }, onError: { (error) in
             self.showInfo(withMessage: "Error fetching Stock Quote")
+            self.stopAnimating()
             
         })
+        self.startAnimating()
         _ = client.request(selectedPortfolio?.ticker, API.keyStats()).subscribe(onSuccess: { (keyStats) in
             DispatchQueue.main.async {
                 if let week52High = keyStats.week52high {
-                    self.week52High.text = String(format: "%.2f", week52High)
+                    self.week52High.text = PortfolioStockDetailedViewController.currencyFormatter.string(from: week52High as NSNumber)
                 }
                 if let week52Low = keyStats.week52low {
-                    self.week52Low.text = String(format: "%.2f", week52Low)
+                    self.week52Low.text = PortfolioStockDetailedViewController.currencyFormatter.string(from: week52Low as NSNumber)
                 }
                 if let change = keyStats.ytdChangePercent {
                     self.week52Change.text = String(format: "%.2f", change)
@@ -102,15 +104,17 @@ class PortfolioStockDetailedViewController: UIViewController {
                     self.mktCap.text = inBillions
                 }
             }
+            self.stopAnimating()
         }, onError: { (error) in
             self.showInfo(withMessage: "Error fetching Key Stats")
+            self.stopAnimating()
         })
     }
     
     //MARK: - Financials Section
     private func showFinancials() {
         let client = Client.sharedInstance
-        
+        self.startAnimating()
         _ = client.request(selectedPortfolio?.ticker, API.financials()).subscribe(onSuccess: { (financials) in
             DispatchQueue.main.async {
                 let financialLatest = financials.financials.compactMap { $0 }.first
@@ -148,16 +152,17 @@ class PortfolioStockDetailedViewController: UIViewController {
                 PortfolioStockDetailedViewController.df.dateFormat = "MMM dd, yyyy"
                 self.reportedDate.text = PortfolioStockDetailedViewController.df.string(from: reportedDate!)
             }
+            self.stopAnimating()
         }, onError: { (error) in
             self.showInfo(withMessage: "Error fetching Financials")
-            
+            self.stopAnimating()
         })
     }
     
     //MARK: - Earnings Section
     private func showEarnings() {
         let client = Client.sharedInstance
-        
+        self.startAnimating()
         _ = client.request(selectedPortfolio?.ticker, API.earnings()).subscribe(onSuccess: { (earning) in
             DispatchQueue.main.async {
                 let earningsLatest = earning.earnings.compactMap{ $0 }.first
@@ -184,9 +189,10 @@ class PortfolioStockDetailedViewController: UIViewController {
                     self.earningPeriod.text = fiscalPeriod
                 }
             }
+            self.stopAnimating()
         }, onError: { (error) in
             self.showInfo(withMessage: "Error fetching Earnings")
-            
+            self.stopAnimating()
         })
             
     }
@@ -215,14 +221,16 @@ extension PortfolioStockDetailedViewController {
         }
     }
     
-    /*func toggleActivityIndicator(_ activityIndicator: UIActivityIndicatorView){
+    func startAnimating(){
         DispatchQueue.main.async {
-            if activityIndicator.isAnimating {
-                activityIndicator.stopAnimating()
-            }else {
-                activityIndicator.startAnimating()
-            }
+            self.activityIndicator.startAnimating()
         }
-    }*/
+    }
+    
+    func stopAnimating(){
+        DispatchQueue.main.async {
+            self.activityIndicator.stopAnimating()
+        }
+    }
     
 }

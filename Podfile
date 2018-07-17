@@ -7,7 +7,6 @@ def sharedPods
     pod 'RxSwift', '~> 4.0'
     pod 'RxCocoa', '~> 4.0'
     pod 'RxAlamofire'
-    pod 'AlamofireNetworkActivityIndicator', '~> 2.2'
     pod 'Charts'
 end
 
