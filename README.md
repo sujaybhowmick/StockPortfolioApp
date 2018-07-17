@@ -1,4 +1,4 @@
-#  StockPortfolio App
+#  StockTrack App
 
 #### Libraries and SDK's
 
@@ -9,9 +9,11 @@
 5. **Charts** - Line Chart
 6. **Cocoa Pods** - Dependecy Management
 
-#### Application flow and Screens
+#### Application flow and Screen Cast
 
-[http://recordit.co/fbtutpZIg4]()
+![](/Users/sujaybhowmick/Downloads/StockTrackScreenCast.gif)
+
+
 
 
 
