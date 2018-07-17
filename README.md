@@ -36,7 +36,7 @@ All the screens are navigable using the navigation controllers
 
 1. Xcode 9.2+
 2. Swift 4.0
-3. Cocoa Pod 1.5.3
+3. CocoaPods 1.5.3
 
 *3rd Party Libraries*
 
@@ -48,7 +48,7 @@ All the screens are navigable using the navigation controllers
 
 The App using **Xcode** for development and build and Cocoa Pods for dependency management. Following steps are required before the project can be built using Xcode
 
-1. Install Cocoa Pod dependency management tool - https://cocoapods.org/#install
+1. Install CocoaPods dependency management tool - https://cocoapods.org/#install
 2. Clone the project from the repository https://github.com/sujaybhowmick/StockPortfolioApp.git from github
 3. Install the dependencies for the project by executing the `$pod install` command from within the project's parent directory. This will create  ***.xcworkspace*** file after it successfully installs the dependencies
 4. Open the project by clicking on the ***.xcworkspace*** file and this should open up Xcode. Now build the App using Xcode `Command + B` keys
