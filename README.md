@@ -11,11 +11,7 @@
 
 #### Application flow and Screen Cast
 
-![](/Users/sujaybhowmick/Downloads/StockTrackScreenCast.gif)
-
-
-
-
+[[StockPortfolioApp](https://github.com/sujaybhowmick/StockPortfolioApp)/**StockTrackScreenCast.gif**]
 
 
 
