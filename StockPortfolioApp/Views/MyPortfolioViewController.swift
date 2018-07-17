@@ -58,7 +58,7 @@ class MyPortfolioViewController: UIViewController, UITableViewDataSource, UITabl
                 cell.priceLabel.text = String(format: "%.2f", delayedQuote.price ?? "Not Available")
             }
         }, onError: { (error) in
-            print(error)
+            self.showInfo(withMessage: "Error fetching Stock Quote")
         })
         return cell
     }
@@ -143,7 +143,7 @@ extension MyPortfolioViewController {
                 }
             }
         } catch {
-            print(error)
+            showInfo(withMessage: "Error fetching autocomplete list of tickers")
         }
         return possibleMatches
     }
@@ -157,7 +157,7 @@ extension MyPortfolioViewController {
                 return nil
             }
         }catch{
-            print(error)
+            showInfo(withMessage: "Error fetching \(ticker)")
         }
         return nil
     }
@@ -179,7 +179,7 @@ extension MyPortfolioViewController {
                 resetValues()
                 return portfolio
             }catch{
-                print(error)
+                showInfo(withMessage: "Error Saving \(stockTicker.ticker!)")
             }
         }
         return nil
@@ -192,7 +192,7 @@ extension MyPortfolioViewController {
                 self.tableView.reloadData()
             }
         }catch {
-            print(error)
+            showInfo(withMessage: "Error fetching Portfolio List")
         }
     }
     
@@ -204,9 +204,19 @@ extension MyPortfolioViewController {
                 return nil
             }
         }catch {
-            print(error)
+            showInfo(withMessage: "Error fetching portfolio for \(ticker)")
         }
         return nil
+    }
+    
+    private func showInfo(withTitle: String = "Info", withMessage: String, action: (() -> Void)? = nil) {
+        performUIUpdatesOnMain {
+            let ac = UIAlertController(title: withTitle, message: withMessage, preferredStyle: .alert)
+            ac.addAction(UIAlertAction(title: "OK", style: .default, handler: {(alertAction) in
+                action?()
+            }))
+            self.present(ac, animated: true)
+        }
     }
 }
 

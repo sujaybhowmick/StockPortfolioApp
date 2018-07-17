@@ -46,7 +46,19 @@ class ChartViewController: UIViewController {
                 self.lineChartView.chartDescription?.text = self.selectedPortfolio?.ticker
             }
         }, onError: { (error) in
-            print(error)
+            self.showInfo(withMessage: "Error Displaying Chart")
         })
+    }
+}
+
+extension ChartViewController {
+    private func showInfo(withTitle: String = "Info", withMessage: String, action: (() -> Void)? = nil) {
+        performUIUpdatesOnMain {
+            let ac = UIAlertController(title: withTitle, message: withMessage, preferredStyle: .alert)
+            ac.addAction(UIAlertAction(title: "OK", style: .default, handler: {(alertAction) in
+                action?()
+            }))
+            self.present(ac, animated: true)
+        }
     }
 }

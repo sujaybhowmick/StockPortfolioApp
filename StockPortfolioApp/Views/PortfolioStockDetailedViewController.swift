@@ -80,7 +80,7 @@ class PortfolioStockDetailedViewController: UIViewController {
                 self.date.text = PortfolioStockDetailedViewController.df.string(from: delayedQuote.priceTime!)
             }
         }, onError: { (error) in
-            print(error)
+            self.showInfo(withMessage: "Error fetching Stock Quote")
         })
     }
     
@@ -126,7 +126,7 @@ class PortfolioStockDetailedViewController: UIViewController {
                 self.reportedDate.text = PortfolioStockDetailedViewController.df.string(from: reportedDate!)
             }
         }, onError: { (error) in
-            print(error)
+            self.showInfo(withMessage: "Error fetching Financials")
         })
     }
     
@@ -160,7 +160,7 @@ class PortfolioStockDetailedViewController: UIViewController {
                 }
             }
         }, onError: { (error) in
-            print(error)
+            self.showInfo(withMessage: "Error fetching Earnings")
         })
             
     }
@@ -175,7 +175,17 @@ class PortfolioStockDetailedViewController: UIViewController {
 }
 
 extension PortfolioStockDetailedViewController {
-    func covertToBillion(_ value: Int) -> Double? {
+    private func covertToBillion(_ value: Int) -> Double? {
         return Double(value / 1000000000)
+    }
+    
+    private func showInfo(withTitle: String = "Info", withMessage: String, action: (() -> Void)? = nil) {
+        performUIUpdatesOnMain {
+            let ac = UIAlertController(title: withTitle, message: withMessage, preferredStyle: .alert)
+            ac.addAction(UIAlertAction(title: "OK", style: .default, handler: {(alertAction) in
+                action?()
+            }))
+            self.present(ac, animated: true)
+        }
     }
 }
