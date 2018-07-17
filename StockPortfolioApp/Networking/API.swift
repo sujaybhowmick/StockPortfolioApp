@@ -30,4 +30,8 @@ extension API {
     static func earnings() -> Endpoint<Earning> {
         return Endpoint(path: "/stock/%@/earnings")
     }
+    
+    static func keyStats() -> Endpoint<KeyStats> {
+        return Endpoint(path: "/stock/%@/stats")
+    }
 }

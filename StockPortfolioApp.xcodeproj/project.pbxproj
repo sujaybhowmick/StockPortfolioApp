@@ -41,6 +41,8 @@
 		90F9B1F820FB6DE100BBD22C /* Portfolio+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F9B1F420FB6DE100BBD22C /* Portfolio+CoreDataClass.swift */; };
 		90F9B1F920FB6DE100BBD22C /* Portfolio+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F9B1F520FB6DE100BBD22C /* Portfolio+CoreDataProperties.swift */; };
 		90F9B1FB20FB927400BBD22C /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F9B1FA20FB927400BBD22C /* CustomTableViewCell.swift */; };
+		90FD4C2720FDECE20016C9A4 /* KeyStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90FD4C2620FDECE20016C9A4 /* KeyStats.swift */; };
+		90FD4C2920FDEE270016C9A4 /* KeyStatsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90FD4C2820FDEE270016C9A4 /* KeyStatsTests.swift */; };
 		F961AADF880B1F791A562D52 /* Pods_StockPortfolioApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37A3E2A577E5DB2F6077115C /* Pods_StockPortfolioApp.framework */; };
 		FDC09DAF9018D554B22E847F /* Pods_StockPortfolioAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1284F88ADA2AC37CF03F2BBF /* Pods_StockPortfolioAppTests.framework */; };
 /* End PBXBuildFile section */
@@ -99,6 +101,8 @@
 		90F9B1F420FB6DE100BBD22C /* Portfolio+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Portfolio+CoreDataClass.swift"; sourceTree = "<group>"; };
 		90F9B1F520FB6DE100BBD22C /* Portfolio+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Portfolio+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		90F9B1FA20FB927400BBD22C /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
+		90FD4C2620FDECE20016C9A4 /* KeyStats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyStats.swift; sourceTree = "<group>"; };
+		90FD4C2820FDEE270016C9A4 /* KeyStatsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyStatsTests.swift; sourceTree = "<group>"; };
 		AC606364A20009EE86E7FE25 /* Pods-StockPortfolioAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StockPortfolioAppTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-StockPortfolioAppTests/Pods-StockPortfolioAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		DD2C9901A85FDB041744A2B8 /* Pods-StockPortfolioAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StockPortfolioAppTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-StockPortfolioAppTests/Pods-StockPortfolioAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		F1CDBDC867A257926BB37747 /* Pods-StockPortfolioApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StockPortfolioApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-StockPortfolioApp/Pods-StockPortfolioApp.debug.xcconfig"; sourceTree = "<group>"; };
@@ -145,6 +149,7 @@
 				90BF749920E14F6900C1DEBB /* FinancialsTests.swift */,
 				90BF749F20E28D4900C1DEBB /* LastTradedPriceTests.swift */,
 				9039456320F9804A00DBA0A4 /* TickerTests.swift */,
+				90FD4C2820FDEE270016C9A4 /* KeyStatsTests.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -238,6 +243,7 @@
 				90BF749D20E28AE300C1DEBB /* LastTradedPrice.swift */,
 				90BF74B620E6146500C1DEBB /* Stock.swift */,
 				9039456020F97EA200DBA0A4 /* Ticker.swift */,
+				90FD4C2620FDECE20016C9A4 /* KeyStats.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -473,6 +479,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				90F9B1F720FB6DE100BBD22C /* StockTicker+CoreDataProperties.swift in Sources */,
+				90FD4C2720FDECE20016C9A4 /* KeyStats.swift in Sources */,
 				90A1995820F236E700F2F561 /* API.swift in Sources */,
 				9039456120F97EA200DBA0A4 /* Ticker.swift in Sources */,
 				90F9B1F120FB6AFE00BBD22C /* StockPortfolio_v1.xcdatamodeld in Sources */,
@@ -506,6 +513,7 @@
 				906D3A2D20DF9F280076C1D1 /* DividendTests.swift in Sources */,
 				90BF74A020E28D4900C1DEBB /* LastTradedPriceTests.swift in Sources */,
 				90BF749A20E14F6900C1DEBB /* FinancialsTests.swift in Sources */,
+				90FD4C2920FDEE270016C9A4 /* KeyStatsTests.swift in Sources */,
 				9039456420F9804A00DBA0A4 /* TickerTests.swift in Sources */,
 				90B8C5A720DDEC7C00DB3E81 /* DelayedQuoteTests.swift in Sources */,
 				9039455F20F75C2900DBA0A4 /* ClientIntegrationTests.swift in Sources */,

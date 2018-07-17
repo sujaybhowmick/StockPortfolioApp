@@ -19,6 +19,10 @@ class PortfolioStockDetailedViewController: UIViewController {
     @IBOutlet weak var high: UILabel!
     @IBOutlet weak var low: UILabel!
     @IBOutlet weak var date: UILabel!
+    @IBOutlet weak var week52High: UILabel!
+    @IBOutlet weak var week52Low: UILabel!
+    @IBOutlet weak var week52Change: UILabel!
+    @IBOutlet weak var mktCap: UILabel!
     
     //MARK: - Financials
     
@@ -81,6 +85,27 @@ class PortfolioStockDetailedViewController: UIViewController {
             }
         }, onError: { (error) in
             self.showInfo(withMessage: "Error fetching Stock Quote")
+        })
+        _ = client.request(selectedPortfolio?.ticker, API.keyStats()).subscribe(onSuccess: { (keyStats) in
+            self.performUIUpdatesOnMain {
+                if let week52High = keyStats.week52high {
+                    self.week52High.text = String(format: "%.2f", week52High)
+                }
+                if let week52Low = keyStats.week52low {
+                    self.week52Low.text = String(format: "%.2f", week52Low)
+                }
+                if let change = keyStats.ytdChangePercent {
+                    self.week52Change.text = String(format: "%.2f", change)
+                }
+                if let mktCap = keyStats.marketcap {
+                    var inBillions = PortfolioStockDetailedViewController.currencyFormatter.string(from: self.covertToBillion(mktCap)! as NSNumber)
+                    inBillions?.append("B")
+                    self.mktCap.text = inBillions
+                }
+            
+            }
+        }, onError: { (error) in
+            self.showInfo(withMessage: "Error fetching Key Stats")
         })
     }
     
