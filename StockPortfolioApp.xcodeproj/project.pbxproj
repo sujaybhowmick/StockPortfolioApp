@@ -61,6 +61,7 @@
 		7986B371B8D6EF0C27657879 /* Pods-StockPortfolioApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StockPortfolioApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-StockPortfolioApp/Pods-StockPortfolioApp.release.xcconfig"; sourceTree = "<group>"; };
 		90386A7E20FC62AB00E881C6 /* PortfolioStockDetailedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioStockDetailedViewController.swift; sourceTree = "<group>"; };
 		90386A8120FD128C00E881C6 /* ChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartViewController.swift; sourceTree = "<group>"; };
+		90386A8320FD94E900E881C6 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		9039455E20F75C2900DBA0A4 /* ClientIntegrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientIntegrationTests.swift; sourceTree = "<group>"; };
 		9039456020F97EA200DBA0A4 /* Ticker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ticker.swift; sourceTree = "<group>"; };
 		9039456320F9804A00DBA0A4 /* TickerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickerTests.swift; sourceTree = "<group>"; };
@@ -162,6 +163,7 @@
 		9081270C20C58BAA00AC3ABB = {
 			isa = PBXGroup;
 			children = (
+				90386A8320FD94E900E881C6 /* README.md */,
 				9081271720C58BAA00AC3ABB /* StockPortfolioApp */,
 				90CA7B4220CD122C003A9C92 /* StockPortfolioAppTests */,
 				9081271620C58BAA00AC3ABB /* Products */,

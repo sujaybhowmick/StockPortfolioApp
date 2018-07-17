@@ -23,7 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     private func preLoadData() {
         let defaults = UserDefaults.standard
         let isPreloaded = defaults.bool(forKey: "isPreloaded")
-        //CoreDataStack.shared().preLoadData()
+      
         if !isPreloaded {
             do {
                 try CoreDataStack.shared().dropAllData()
