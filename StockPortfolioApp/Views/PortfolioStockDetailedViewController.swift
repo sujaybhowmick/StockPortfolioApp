@@ -30,11 +30,18 @@ class PortfolioStockDetailedViewController: UIViewController {
     @IBOutlet weak var debtEq: UILabel!
     @IBOutlet weak var cash: UILabel!
     
-    //MARK: - Line Chart
-   // @IBOutlet weak var lineChartView: LineChartView!
+    //MARK: - Earnings
+    
+    @IBOutlet weak var eps: UILabel!
+    @IBOutlet weak var estEps: UILabel!
+    @IBOutlet weak var dollarEps: UILabel!
+    @IBOutlet weak var change: UILabel!
+    @IBOutlet weak var earningPeriod: UILabel!
+    @IBOutlet weak var earningReportedDate: UILabel!
     
     
     static var df = DateFormatter()
+    static let currencyFormatter = NumberFormatter()
     
     
     func performUIUpdatesOnMain(_ updates: @escaping () -> Void) {
@@ -46,54 +53,61 @@ class PortfolioStockDetailedViewController: UIViewController {
     @IBAction func showChart(_ sender: Any) {
         performSegue(withIdentifier: "chartViewSegue", sender: nil)
     }
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        //reloadTableView()
-    }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        let currencyFormatter = NumberFormatter()
-        currencyFormatter.usesGroupingSeparator = true
-        currencyFormatter.numberStyle = .currency
+        
+        PortfolioStockDetailedViewController.currencyFormatter.usesGroupingSeparator = true
+        PortfolioStockDetailedViewController.currencyFormatter.numberStyle = .currency
         // localize to your grouping and decimal separator
-        currencyFormatter.locale = Locale(identifier: "en_US")
-
+        PortfolioStockDetailedViewController.currencyFormatter.locale = Locale(identifier: "en_US")
+        self.showStockQuote()
+        self.showFinancials()
+        self.showEarnings()
+    }
+    
+    //MARK: - Stock Quote Section
+    private func showStockQuote() {
+       
         let client = Client.sharedInstance
         _ = client.request(selectedPortfolio?.ticker, API.delayedQuote()).subscribe(onSuccess: { (delayedQuote) in
             self.performUIUpdatesOnMain {
                 self.ticker.text = self.selectedPortfolio?.ticker
-                self.price.text = currencyFormatter.string(from: delayedQuote.price! as NSNumber)
-                self.high.text = currencyFormatter.string(from: delayedQuote.high! as NSNumber)
-                self.low.text = currencyFormatter.string(from: delayedQuote.low! as NSNumber)
+                self.price.text = PortfolioStockDetailedViewController.currencyFormatter.string(from: delayedQuote.price! as NSNumber)
+                self.high.text = PortfolioStockDetailedViewController.currencyFormatter.string(from: delayedQuote.high! as NSNumber)
+                self.low.text = PortfolioStockDetailedViewController.currencyFormatter.string(from: delayedQuote.low! as NSNumber)
                 PortfolioStockDetailedViewController.df.dateFormat = "MMM dd, yyyy HH:mm:ss"
                 self.date.text = PortfolioStockDetailedViewController.df.string(from: delayedQuote.priceTime!)
             }
         }, onError: { (error) in
             print(error)
         })
+    }
+    
+    //MARK: - Financials Section
+    private func showFinancials() {
+        let client = Client.sharedInstance
         _ = client.request(selectedPortfolio?.ticker, API.financials()).subscribe(onSuccess: { (financials) in
-           
+            
             self.performUIUpdatesOnMain {
                 let financialLatest = financials.financials.compactMap { $0 }.first
                 if let profit = financialLatest?.grossProfit {
-                    var inBillions = currencyFormatter.string(from: self.covertToBillion(profit)! as NSNumber)
+                    var inBillions = PortfolioStockDetailedViewController.currencyFormatter.string(from: self.covertToBillion(profit)! as NSNumber)
                     inBillions?.append("B")
                     self.profit.text = inBillions
                 }
                 if let income = financialLatest?.netIncome {
-                    var inBillions = currencyFormatter.string(from: self.covertToBillion(income)! as NSNumber)
+                    var inBillions = PortfolioStockDetailedViewController.currencyFormatter.string(from: self.covertToBillion(income)! as NSNumber)
                     inBillions?.append("B")
                     self.netIncome.text = inBillions
                 }
                 if let revenue = financialLatest?.totalRevenue {
-                    var inBillions = currencyFormatter.string(from: self.covertToBillion(revenue)! as NSNumber)
+                    var inBillions = PortfolioStockDetailedViewController.currencyFormatter.string(from: self.covertToBillion(revenue)! as NSNumber)
                     inBillions?.append("B")
                     self.revenue.text = inBillions
                 }
                 if let debt = financialLatest?.totalDebt {
-                    var inBillions = currencyFormatter.string(from: self.covertToBillion(debt)! as NSNumber)
+                    var inBillions = PortfolioStockDetailedViewController.currencyFormatter.string(from: self.covertToBillion(debt)! as NSNumber)
                     inBillions?.append("B")
                     self.debt.text = inBillions
                     if let shareHolderEquity = financialLatest?.shareholderEquity {
@@ -102,7 +116,7 @@ class PortfolioStockDetailedViewController: UIViewController {
                     }
                 }
                 if let cash = financialLatest?.totalCash {
-                    var inBillions = currencyFormatter.string(from: self.covertToBillion(cash)! as NSNumber)
+                    var inBillions = PortfolioStockDetailedViewController.currencyFormatter.string(from: self.covertToBillion(cash)! as NSNumber)
                     inBillions?.append("B")
                     self.cash.text = inBillions
                 }
@@ -114,6 +128,41 @@ class PortfolioStockDetailedViewController: UIViewController {
         }, onError: { (error) in
             print(error)
         })
+    }
+    
+    //MARK: - Earnings Section
+    private func showEarnings() {
+        let client = Client.sharedInstance
+        _ = client.request(selectedPortfolio?.ticker, API.earnings()).subscribe(onSuccess: { (earning) in
+            self.performUIUpdatesOnMain {
+                let earningsLatest = earning.earnings.compactMap{ $0 }.first
+                if let eps = earningsLatest?.actualEPS {
+                    self.eps.text = String(format: "%.2f", eps)
+                }
+                if let estEps = earningsLatest?.estimatedEPS {
+                    self.estEps.text = String(format: "%.2f", estEps)
+                }
+                if let dollarEps = earningsLatest?.epsSurpriseDollar {
+                    self.dollarEps.text = String(format: "%.2f", dollarEps)
+                }
+                
+                if let change = earningsLatest?.yearAgoChangePercent {
+                    self.change.text = String(format: "%.2f", change)
+                }
+                if let earningsReportedDate = earningsLatest?.epsReportDate {
+                    PortfolioStockDetailedViewController.df.dateFormat = "yyyy-MM-dd"
+                    let date = PortfolioStockDetailedViewController.df.date(from: earningsReportedDate)
+                    PortfolioStockDetailedViewController.df.dateFormat = "MMM dd, yyyy"
+                    self.earningReportedDate.text = PortfolioStockDetailedViewController.df.string(from: date!)
+                }
+                if let fiscalPeriod = earningsLatest?.fiscalPeriod {
+                    self.earningPeriod.text = fiscalPeriod
+                }
+            }
+        }, onError: { (error) in
+            print(error)
+        })
+            
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
