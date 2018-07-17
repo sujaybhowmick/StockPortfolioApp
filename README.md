@@ -10,10 +10,7 @@
 6. **Cocoa Pods** - Dependecy Management
 
 #### Application flow and Screen Cast
-
-<a href="https://github.com/sujaybhowmick/StockPortfolioApp/blob/master/StockTrackScreenCast.gif?raw=true"></a>
-
-
+<a href=""><img src="https://github.com/sujaybhowmick/StockPortfolioApp/blob/master/StockTrackScreenCast.gif?raw=true"></a>
 
 
 
