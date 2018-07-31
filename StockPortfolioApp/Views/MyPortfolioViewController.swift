@@ -23,13 +23,15 @@ class MyPortfolioViewController: UIViewController, UITableViewDataSource, UITabl
     var appDelegate: AppDelegate {
         return UIApplication.shared.delegate as! AppDelegate
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.delegate = self
         self.tableView.dataSource = self
+        self.searchTextField.delegate = self
         activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: .gray)
         self.tableView.backgroundView = activityIndicator
+        self.tableView.keyboardDismissMode = .onDrag
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -91,7 +93,7 @@ class MyPortfolioViewController: UIViewController, UITableViewDataSource, UITabl
                 return false
             }
         }
-        return false
+        return true
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

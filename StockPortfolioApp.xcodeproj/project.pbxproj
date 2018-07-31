@@ -23,6 +23,7 @@
 		9081271E20C58BAA00AC3ABB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9081271C20C58BAA00AC3ABB /* Main.storyboard */; };
 		9081272020C58BAB00AC3ABB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9081271F20C58BAB00AC3ABB /* Assets.xcassets */; };
 		9081272320C58BAB00AC3ABB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9081272120C58BAB00AC3ABB /* LaunchScreen.storyboard */; };
+		909326D72108415C00684EF9 /* MyPortfolioViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 909326D62108415C00684EF9 /* MyPortfolioViewModel.swift */; };
 		90A1995620F235F500F2F561 /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A1995520F235F500F2F561 /* EndPoint.swift */; };
 		90A1995820F236E700F2F561 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A1995720F236E700F2F561 /* API.swift */; };
 		90A1995A20F24E6200F2F561 /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A1995920F24E6200F2F561 /* Client.swift */; };
@@ -80,6 +81,7 @@
 		9081271F20C58BAB00AC3ABB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9081272220C58BAB00AC3ABB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9081272420C58BAB00AC3ABB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		909326D62108415C00684EF9 /* MyPortfolioViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPortfolioViewModel.swift; sourceTree = "<group>"; };
 		90A1995520F235F500F2F561 /* EndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
 		90A1995720F236E700F2F561 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		90A1995920F24E6200F2F561 /* Client.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Client.swift; sourceTree = "<group>"; };
@@ -189,6 +191,7 @@
 		9081271720C58BAA00AC3ABB /* StockPortfolioApp */ = {
 			isa = PBXGroup;
 			children = (
+				909326D52108413300684EF9 /* ViewModels */,
 				90F099EE20C7A01A007C0BB3 /* Persistence */,
 				90F099ED20C7A011007C0BB3 /* Networking */,
 				90F099EC20C7A004007C0BB3 /* Models */,
@@ -201,6 +204,15 @@
 				907EAAC820CD1CE900F9A267 /* Constants.swift */,
 			);
 			path = StockPortfolioApp;
+			sourceTree = "<group>";
+		};
+		909326D52108413300684EF9 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				909326D62108415C00684EF9 /* MyPortfolioViewModel.swift */,
+			);
+			name = ViewModels;
+			path = "New Group";
 			sourceTree = "<group>";
 		};
 		90A1995D20F2502C00F2F561 /* Networking */ = {
@@ -387,7 +399,6 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-StockPortfolioAppTests/Pods-StockPortfolioAppTests-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/AlamofireNetworkActivityIndicator/AlamofireNetworkActivityIndicator.framework",
 				"${BUILT_PRODUCTS_DIR}/Charts/Charts.framework",
 				"${BUILT_PRODUCTS_DIR}/RxAlamofire/RxAlamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
@@ -397,7 +408,6 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireNetworkActivityIndicator.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Charts.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxAlamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
@@ -417,7 +427,6 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-StockPortfolioApp/Pods-StockPortfolioApp-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/AlamofireNetworkActivityIndicator/AlamofireNetworkActivityIndicator.framework",
 				"${BUILT_PRODUCTS_DIR}/Charts/Charts.framework",
 				"${BUILT_PRODUCTS_DIR}/RxAlamofire/RxAlamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
@@ -427,7 +436,6 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireNetworkActivityIndicator.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Charts.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxAlamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
@@ -496,6 +504,7 @@
 				906D3A2720DF6FD80076C1D1 /* Earning.swift in Sources */,
 				90BF749820E1424100C1DEBB /* Financials.swift in Sources */,
 				906D3A2B20DF9E200076C1D1 /* Dividend.swift in Sources */,
+				909326D72108415C00684EF9 /* MyPortfolioViewModel.swift in Sources */,
 				90BF749E20E28AE300C1DEBB /* LastTradedPrice.swift in Sources */,
 				90A1995620F235F500F2F561 /* EndPoint.swift in Sources */,
 				90BF74A220E30B2600C1DEBB /* CoreDataStack.swift in Sources */,

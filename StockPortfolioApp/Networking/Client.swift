@@ -53,7 +53,7 @@ final class Client {
             request
                 .validate()
                 .responseData(queue: self.queue) { response in
-                    let codable = response.result.flatMap(endpoint.decode)
+                    let codable: Result<Response> = response.result.flatMap(endpoint.decode)
                     switch codable {
                         case let .success(val): observer(.success(val))
                         case let .failure(err): observer(.error(err))
