@@ -20,6 +20,8 @@ class MyPortfolioViewController: UIViewController, UITableViewDataSource, UITabl
     
     @IBOutlet weak var tableView: UITableView!
     
+    static let currencyFormatter = NumberFormatter()
+    
     var appDelegate: AppDelegate {
         return UIApplication.shared.delegate as! AppDelegate
     }
@@ -32,6 +34,9 @@ class MyPortfolioViewController: UIViewController, UITableViewDataSource, UITabl
         activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: .gray)
         self.tableView.backgroundView = activityIndicator
         self.tableView.keyboardDismissMode = .onDrag
+        MyPortfolioViewController.currencyFormatter.usesGroupingSeparator = true
+        MyPortfolioViewController.currencyFormatter.numberStyle = .currency
+        MyPortfolioViewController.currencyFormatter.locale = Locale(identifier: "en_US")
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -54,7 +59,7 @@ class MyPortfolioViewController: UIViewController, UITableViewDataSource, UITabl
             self.startAnimating()
             _ = client.request(portfolio.ticker!, API.delayedQuote()).subscribe(onSuccess: { (delayedQuote) in
                 DispatchQueue.main.async {
-                    cell.priceLabel.text = String(format: "%.2f", delayedQuote.price ?? "Not Available")
+                    cell.priceLabel.text = MyPortfolioViewController.currencyFormatter.string(from: (delayedQuote.price ?? 0.00) as NSNumber)
                 }
                 self.stopAnimating()
             }, onError: { (error) in
